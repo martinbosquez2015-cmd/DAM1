@@ -1,0 +1,26 @@
+package defecto;
+
+public class EjAparte_0_1 {
+
+	public static void main(String[] args) {
+		boolean tresIguales= false;
+		int contador = 0;
+		String tandaNumeros = "";
+		do {
+		for (int i=0; i<3; i++) {
+			int random = (int)(Math.random()*6)+1;
+			if(i<2) {
+				System.out.print(random + " - ");
+			}
+			else
+				System.out.println();
+		}
+		
+		contador++;
+		}while(tresIguales==false);
+		System.out.println(contador);
+	
+
+	}
+
+}

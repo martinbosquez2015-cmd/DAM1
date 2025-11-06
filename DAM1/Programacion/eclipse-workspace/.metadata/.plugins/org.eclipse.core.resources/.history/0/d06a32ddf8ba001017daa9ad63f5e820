@@ -1,0 +1,32 @@
+package defecto;
+import java.util.*;
+public class EjAparte_0_1 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		int dados = teclado.nextInt();
+		boolean tresIguales= false;
+		int contador = 0;
+		int tandaNumeros[] = new int[dados];
+		//do {
+		for (int i=0; i<3; i++) {
+			int random = (int)(Math.random()*6)+1;
+			tandaNumeros[i] = random;
+			}
+		for(int num:tandaNumeros) {
+			System.out.print(tandaNumeros[num]);
+			if(num<tandaNumeros.length-1)
+				System.out.print(" - ");
+		}
+			
+		System.out.println(tandaNumeros);
+		
+			
+		
+		//}while(tresIguales==false);
+		System.out.println(contador);
+	
+
+	}
+
+}

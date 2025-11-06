@@ -1,0 +1,26 @@
+package defecto;
+import java.util.Scanner; 
+import java.util.regex.*;
+public class EGP2_16 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.println("Introduce el radio de tu circunferencia");
+		String radio = teclado.nextLine();
+		Pattern numero = Pattern.compile("\\d+");
+		Matcher coincidencia = numero.matcher(radio);
+		boolean siNum = coincidencia.matches();
+		System.out.println(siNum);
+		/*
+		double longitud= 2*3.14159265 * radio;
+		double area = 3.14159265*radio*radio;
+		System.out.println("La longitud de la circunferencia es: " + longitud);
+		System.out.println("El área del círculo es: " + area);
+		longitud= longitud*100000;
+		area = area*100000;*/
+		teclado.close();
+
+	}
+
+}
