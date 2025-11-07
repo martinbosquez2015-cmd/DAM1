@@ -1,0 +1,17 @@
+package defecto;
+import java.util.*;
+public class EjAparte02 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Cuánto ha costado la cena?: ");
+		double importe = teclado.nextDouble();
+		teclado.nextLine();//Para limpiar el buffer del teclado
+		System.out.println("Cuántos habéis cenado?: ");
+		int personas = teclado.nextInt();
+		teclado.close();
+		System.out.printf("Tocais a %2.f € por cabeza", importe/personas );
+
+	}
+
+}

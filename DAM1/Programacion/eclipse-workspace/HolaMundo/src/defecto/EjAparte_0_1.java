@@ -15,7 +15,10 @@ public class EjAparte_0_1 {
 		
 		do {
 		for (int i=0; i<dados; i++) {
-			int random = (int)(Math.random()*6)+1;
+			
+			int random = (int)(Math.random()*7)+1;
+			if (random==7)
+				random=6;
 			tandaNumeros[i] = random;
 			estasdisticas[random-1]++;
 			System.out.print(random);
@@ -33,7 +36,7 @@ public class EjAparte_0_1 {
 		}while(tresIguales==false);
 		for(int i=0; i<6; i++) {
 			float porcentaje= (100*(estasdisticas[i])/(float)(contador*dados));
-			System.out.printf("El número %d ha salido el %.2f%% de las veces\n",i,porcentaje);
+			System.out.printf("El número %d ha salido el %.2f%% de las veces\n",i+1,porcentaje);
 		}
 	
 		

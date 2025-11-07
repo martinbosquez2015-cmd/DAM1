@@ -1,0 +1,29 @@
+package practicas;
+
+import java.util.Arrays;
+
+public class Practica_Constante_kaprekar {
+
+	public static void main(String[] args) {
+		String numero = "2325";
+		String numeroOrd="";
+		String numeroOrdReverse = "";
+		String[] numeroarr = new String[numero.length()];
+		Arrays.fill(numeroarr, "");
+		for(int i=0; i<numero.length(); i++) {
+			numeroarr[i]+=numero.charAt(i);
+		}
+		Arrays.sort(numeroarr);
+		for(int j=0; j<numeroarr.length; j++) {
+			numeroOrd+=numeroarr[j];
+		}
+		System.out.println(numeroOrd);
+		for(int k= numeroarr.length-1; k>=0; k--) {
+			numeroOrdReverse+=numeroarr[k];
+		}
+		System.out.println(numeroOrdReverse);
+		
+
+	}
+
+}
