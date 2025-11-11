@@ -1,0 +1,47 @@
+package practicas;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Practica_Constante_kaprekar {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		System.out.print("Constantedekaprekarinador versión 1.0\nIntroduce un número de 4 cifras por favor: ");
+		
+		int contador = 0;
+		int numeroInt = teclado.nextInt();
+		teclado.close();
+		Pattern 4numeros = new Pattern.Compile("\\d{4}");
+		System.out.println("Para llegar a la constante de Kaprekar con el número "+numeroInt+" se necesitan...");
+		do {
+			String numero = String.valueOf(numeroInt);
+			String numeroOrd = "";
+			String numeroOrdReverse = "";
+			int numeroIntOrd = 0;
+			int numeroIntOrdRev = 0;
+			String[] numeroarr = new String[numero.length()];
+			Arrays.fill(numeroarr, "");
+			for (int i = 0; i < numero.length(); i++) {
+				numeroarr[i] += numero.charAt(i);
+			}
+			Arrays.sort(numeroarr);
+			for (int j = 0; j < numeroarr.length; j++) {
+				numeroOrd += numeroarr[j];
+			}
+			System.out.println(numeroOrd);
+			for (int k = numeroarr.length - 1; k >= 0; k--) {
+				numeroOrdReverse += numeroarr[k];
+			}
+			System.out.println(numeroOrdReverse);
+			System.out.print(numeroOrdReverse + " - " + numeroOrd + " = ");
+			numeroIntOrd = Integer.parseInt(numeroOrd);
+			numeroIntOrdRev = Integer.parseInt(numeroOrdReverse);
+			numeroInt = numeroIntOrdRev - numeroIntOrd;
+			System.out.println(numeroInt);
+			contador++;
+		} while (numeroInt != 6174);
+		System.out.println("..."+contador+" operaciones.");
+	}
+
+}

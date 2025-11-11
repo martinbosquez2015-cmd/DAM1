@@ -9,22 +9,20 @@ public class Practica_Constante_kaprekar {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.print("Constantedekaprekarinador versión 1.0\n");
+		System.out.print("Constantedekaprekarinador versión 1.0\nIntroduce un número de 4 cifras por favor: ");
 		boolean entradaCorrecta = true;
 		int contador = 0;
 		int numeroInt = 0;
 		final int kaprekar = 6174;
 		boolean intentoNuevo= true;
 		do {
-			System.out.println("Introduce un número de 4 cifras por favor: ");
 		try {
-			
 			numeroInt = teclado.nextInt();
 		} catch (Exception e) {
 			entradaCorrecta = false;
 			System.out.println("Eso no es un número entero");
 		} finally {
-			//teclado.close();
+			teclado.close();
 		}
 		if (entradaCorrecta == true) {
 			String numero = String.valueOf(numeroInt);
@@ -54,17 +52,16 @@ public class Practica_Constante_kaprekar {
 							String[] numeroarr = new String[numero.length()];
 							Arrays.fill(numeroarr, "");
 							for (int i = 0; i < numero.length(); i++) {
-								numeroarr[i] += numero.charAt(i)-'0';
+								numeroarr[i] += numero.charAt(i);
 							}
 							Arrays.sort(numeroarr);
 							for (int j = 0; j < numeroarr.length; j++) {
-								numeroOrd = numeroOrd+ numeroarr[j];
-								numeroOrdReverse = numeroarr[j] + numeroOrdReverse;
+								numeroOrd += numeroarr[j];
 							}
 							System.out.println(numeroOrd);
-							/*for (int k = numeroarr.length - 1; k >= 0; k--) {
+							for (int k = numeroarr.length - 1; k >= 0; k--) {
 								numeroOrdReverse += numeroarr[k];
-							}*/
+							}
 							System.out.println(numeroOrdReverse);
 							System.out.print(numeroOrdReverse + " - " + numeroOrd + " = ");
 							numeroIntOrd = Integer.parseInt(numeroOrd);

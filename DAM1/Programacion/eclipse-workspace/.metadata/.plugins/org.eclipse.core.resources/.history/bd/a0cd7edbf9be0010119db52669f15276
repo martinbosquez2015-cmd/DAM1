@@ -58,13 +58,12 @@ public class Practica_Constante_kaprekar {
 							}
 							Arrays.sort(numeroarr);
 							for (int j = 0; j < numeroarr.length; j++) {
-								numeroOrd = numeroOrd+ numeroarr[j];
-								numeroOrdReverse = numeroarr[j] + numeroOrdReverse;
+								numeroOrd += numeroarr[j];
 							}
 							System.out.println(numeroOrd);
-							/*for (int k = numeroarr.length - 1; k >= 0; k--) {
+							for (int k = numeroarr.length - 1; k >= 0; k--) {
 								numeroOrdReverse += numeroarr[k];
-							}*/
+							}
 							System.out.println(numeroOrdReverse);
 							System.out.print(numeroOrdReverse + " - " + numeroOrd + " = ");
 							numeroIntOrd = Integer.parseInt(numeroOrd);
