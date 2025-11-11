@@ -23,10 +23,8 @@ public class Practica_Constante_kaprekar {
 		} catch (Exception e) {
 			entradaCorrecta = false;
 			System.out.println("Eso no es un número entero");
-			
 		} finally {
 			//teclado.close();
-			teclado.nextLine();
 		}
 		if (entradaCorrecta == true) {
 			String numero = String.valueOf(numeroInt);

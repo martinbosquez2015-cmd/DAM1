@@ -26,7 +26,6 @@ public class Practica_Constante_kaprekar {
 			
 		} finally {
 			//teclado.close();
-			teclado.nextLine();
 		}
 		if (entradaCorrecta == true) {
 			String numero = String.valueOf(numeroInt);

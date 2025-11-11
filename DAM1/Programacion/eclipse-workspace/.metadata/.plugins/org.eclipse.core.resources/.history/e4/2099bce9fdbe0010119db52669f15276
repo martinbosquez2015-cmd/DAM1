@@ -23,10 +23,8 @@ public class Practica_Constante_kaprekar {
 		} catch (Exception e) {
 			entradaCorrecta = false;
 			System.out.println("Eso no es un número entero");
-			
 		} finally {
 			//teclado.close();
-			teclado.nextLine();
 		}
 		if (entradaCorrecta == true) {
 			String numero = String.valueOf(numeroInt);
@@ -43,12 +41,6 @@ public class Practica_Constante_kaprekar {
 				} else {
 					if (numeroInt == kaprekar) {
 						System.out.println("El número introducido es ya la constante de Kaprekar");
-						
-						
-						
-						
-						
-						
 					} else {
 						intentoNuevo =false;
 						System.out.println("Para llegar a la constante de Kaprekar con el número " + numeroInt
