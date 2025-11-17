@@ -2256,3 +2256,19 @@ java.io.IOException: Stream closed
 	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
 	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-11-17 12:50:52.728 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-17 12:50:54.599
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-11-17 12:52:16.784
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-17 12:52:17.048
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
