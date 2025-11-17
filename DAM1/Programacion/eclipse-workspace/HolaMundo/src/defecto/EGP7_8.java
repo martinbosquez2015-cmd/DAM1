@@ -1,6 +1,7 @@
 package defecto;
 
 import java.util.*;
+import java.lang.*;
 
 public class EGP7_8 {
 	// Con esto, la variable se vuelve global, todas las funciones pueden entenderlo
