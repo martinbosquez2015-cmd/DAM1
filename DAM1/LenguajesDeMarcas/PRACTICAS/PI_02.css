@@ -7,3 +7,13 @@ h1{
 h2{
     text-decoration: underline coral
 }
+.tablos{
+    background-color: aliceblue;
+    color: #ff8200
+}
+table{
+    text-align: center;
+}
+table caption{
+    color: black;
+}
