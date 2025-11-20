@@ -2298,3 +2298,379 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY ch.qos.logback.classic 1 0 2025-11-18 12:51:34.226
 !MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-18 14:16:48.231
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-18 14:16:48.231
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-11-20 10:29:28.893 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-20 10:29:30.958
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-20 10:29:35.532
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 11:50:01.581
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 11:51:49.648
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 11:54:35.636
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:19:00.664
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:39:25.223
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.835
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.844
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.864
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.873
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.892
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.911
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.921
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.930
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.939
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.946
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-20 12:46:34.964
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-11-20 12:48:06.632 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-20 12:48:07.884
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-20 12:48:10.038
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2025-11-20 12:50:24.922
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code -1): 'Capicua(1)' is not a valid Java identifier
+	at org.eclipse.jdt.internal.core.MultiOperation.processElements(MultiOperation.java:187)
+	at org.eclipse.jdt.internal.core.CopyResourceElementsOperation.processElements(CopyResourceElementsOperation.java:448)
+	at org.eclipse.jdt.internal.core.MultiOperation.executeOperation(MultiOperation.java:102)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:751)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2457)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2482)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:821)
+	at org.eclipse.jdt.internal.core.JavaModel.runOperation(JavaModel.java:312)
+	at org.eclipse.jdt.internal.core.JavaModel.move(JavaModel.java:271)
+	at org.eclipse.jdt.internal.core.CompilationUnit.move(CompilationUnit.java:1283)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.MoveCompilationUnitChange.doPerformReorg(MoveCompilationUnitChange.java:90)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.CompilationUnitReorgChange.perform(CompilationUnitReorgChange.java:68)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.jdt.ui.text.java.correction.ChangeCorrectionProposal.performChange(ChangeCorrectionProposal.java:179)
+	at org.eclipse.jdt.ui.text.java.correction.ChangeCorrectionProposal.apply(ChangeCorrectionProposal.java:109)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover$AnnotationInformationControl.apply(AbstractAnnotationHover.java:560)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover$AnnotationInformationControl$4.widgetSelected(AbstractAnnotationHover.java:531)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:286)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1652)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1678)
+	at org.eclipse.swt.widgets.Widget.sendSelectionEvent(Widget.java:1828)
+	at org.eclipse.swt.widgets.Link.gtk_button_release_event(Link.java:428)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2615)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6842)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4521)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:668)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:576)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:178)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:670)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:607)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1492)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 -1 2025-11-20 12:50:24.923
+!MESSAGE 'Capicua(1)' is not a valid Java identifier
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2025-11-20 12:50:47.216
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code -1): 'Ejercicio1(1)' is not a valid Java identifier
+	at org.eclipse.jdt.internal.core.MultiOperation.processElements(MultiOperation.java:187)
+	at org.eclipse.jdt.internal.core.CopyResourceElementsOperation.processElements(CopyResourceElementsOperation.java:448)
+	at org.eclipse.jdt.internal.core.MultiOperation.executeOperation(MultiOperation.java:102)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:751)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2457)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2482)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:821)
+	at org.eclipse.jdt.internal.core.JavaModel.runOperation(JavaModel.java:312)
+	at org.eclipse.jdt.internal.core.JavaModel.move(JavaModel.java:271)
+	at org.eclipse.jdt.internal.core.CompilationUnit.move(CompilationUnit.java:1283)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.MoveCompilationUnitChange.doPerformReorg(MoveCompilationUnitChange.java:90)
+	at org.eclipse.jdt.internal.corext.refactoring.changes.CompilationUnitReorgChange.perform(CompilationUnitReorgChange.java:68)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.jdt.ui.text.java.correction.ChangeCorrectionProposal.performChange(ChangeCorrectionProposal.java:179)
+	at org.eclipse.jdt.ui.text.java.correction.ChangeCorrectionProposal.apply(ChangeCorrectionProposal.java:109)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover$AnnotationInformationControl.apply(AbstractAnnotationHover.java:560)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover$AnnotationInformationControl$4.widgetSelected(AbstractAnnotationHover.java:531)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:286)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:5862)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1652)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1678)
+	at org.eclipse.swt.widgets.Widget.sendSelectionEvent(Widget.java:1828)
+	at org.eclipse.swt.widgets.Link.gtk_button_release_event(Link.java:428)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:2615)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:6842)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:6169)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_do_event(Native Method)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1605)
+	at org.eclipse.swt.internal.gtk3.GTK3.gtk_main_iteration_do(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4521)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:668)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:576)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:178)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:670)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:607)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1492)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1465)
+!SUBENTRY 1 org.eclipse.jdt.core 4 -1 2025-11-20 12:50:47.217
+!MESSAGE 'Ejercicio1(1)' is not a valid Java identifier
