@@ -71,7 +71,7 @@ public class EGP8_02 {
 		return(siSimbolo.find());
 	}
 	
-	static boolean clavesCoinciden(String c) {
+	static boolean clavesCoinciden(String c, String c2) {
 		
 		return false;
 	}
