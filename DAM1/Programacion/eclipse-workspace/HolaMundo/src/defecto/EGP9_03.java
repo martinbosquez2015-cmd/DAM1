@@ -6,7 +6,7 @@ public class EGP9_03 {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.println("Comprobadordenumerosperfectosinador versión 1.0");
+		System.out.println("Comprobadordenumerosexcesivosinador versión 1.0");
 		System.out.println("Introduce un número: ");
 		int num1 = comprobacionBasica(teclado);
 		System.out.println("Introduce otro número: ");
