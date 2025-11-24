@@ -22,9 +22,23 @@ def ejercicio1 ():
     input('Fin del programa, presione ENTER para terminar: ')
 
 
+def ejercicio8():
+    print("Comprobadordeclavesinador versión 1.0")
+    coincidencia = False
+    while coincidencia==False:
+        pasw1= input("Por favor, introduce la contraseña: ")
+        pasw2= input("Repite la contraseña: ")
+        if pasw1 in pasw2:
+            print("Las contraseñas coinciden.")
+            coincidencia=True
+        else:
+            print("Las contraseñas no coinciden\nVuelve a intentarlo...")
+    input("Presione ENTER para terminar: ")
+
 
 
 
 
 if __name__=='__main__':
     ejercicio1()
+    ejercicio8()
