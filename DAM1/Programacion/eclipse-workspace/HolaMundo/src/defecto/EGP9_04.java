@@ -1,27 +1,27 @@
 package defecto;
 
+import java.util.*;
+
 public class EGP9_04 {
 
 	public static void main(String[] args) {
-			Scanner teclado = new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
 		System.out.println("Comprobadordenumerosdefectivosinador versión 1.0");
 		System.out.println("Introduce un número: ");
 		int num1 = comprobacionBasica(teclado);
 		System.out.println("Introduce otro número: ");
-		int num2= comprobacionBasica(teclado);
+		int num2 = comprobacionBasica(teclado);
 		teclado.close();
 		System.out.println("Los números defectivos entre los introducidos son: ");
-		for(int i=num1; i<=num2; i++) {
+		for (int i = num1; i <= num2; i++) {
 			if (comprobacionDefectiva(i)) {
 				System.out.print(i);
-				if(i<num2)
+				if (i < num2)
 					System.out.print(", ");
 			}
-				
-		}
-		
 
-		
+		}
+
 	}
 
 	static boolean comprobacionDefectiva(int n1) {

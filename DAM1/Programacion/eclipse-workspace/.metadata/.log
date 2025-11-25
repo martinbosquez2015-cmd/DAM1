@@ -2791,3 +2791,240 @@ java.io.IOException: Stream closed
 	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
 	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-11-25 08:41:06.808 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:41:08.749
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:42:06.435
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+!SESSION 2025-11-25 08:43:22.366 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:43:23.884
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:43:28.051
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+!SESSION 2025-11-25 08:58:15.407 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:58:17.855
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-11-25 08:58:22.387
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 08:58:22.664
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:23.543
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.614
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.622
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.641
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.649
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.656
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.674
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 11:09:46.681
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SESSION 2025-11-25 11:47:02.196 -----------------------------------------------
+eclipse.buildId=4.35.0.20250306-0811
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 11:47:04.130
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-25 11:47:49.478
+!MESSAGE Logback config file: /home/alumno/DAM1/Programacion/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.debug.core 2 0 2025-11-25 13:09:54.463
+!MESSAGE Error writing to 'Input Stream Monitor for PID 15599 EGP8_03': Tubería rota
+!STACK 0
+java.io.IOException: Tubería rota
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:246)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:184)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:181)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 2 0 2025-11-25 13:10:37.197
+!MESSAGE Error writing to 'Input Stream Monitor for PID 15701 EGP8_03': Tubería rota
+!STACK 0
+java.io.IOException: Tubería rota
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:246)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:184)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:181)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 2 0 2025-11-25 13:11:02.132
+!MESSAGE Error writing to 'Input Stream Monitor for PID 15755 EGP8_03': Tubería rota
+!STACK 0
+java.io.IOException: Tubería rota
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:246)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:184)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:181)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 2 0 2025-11-25 14:04:41.269
+!MESSAGE Error writing to 'Input Stream Monitor for PID 21314 EGP8_03': Tubería rota
+!STACK 0
+java.io.IOException: Tubería rota
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:246)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:184)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:181)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 14:08:16.375
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.debug.core 4 125 2025-11-25 14:08:16.392
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:188)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:343)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:420)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:405)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.internalRead(OutputStreamMonitor.java:249)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:225)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
