@@ -1,4 +1,5 @@
 use sakila;
+
 SELECT 
     title
 FROM
@@ -173,12 +174,123 @@ SELECT
             customer.customer_id = payment.customer_id) AS total_amount
 FROM
     customer;
-    
-    
-    
-    
-    
-Select category_id, count(film_id) as film_counts from film_category group by category_id;
 
-select name, category_counts.film_counts from (select category_id, count(film_id) as film_counts from film_category group by category_id) as category_counts
-join category using(category_id);
+
+
+SELECT 
+    name, film_counts
+FROM
+    (SELECT 
+        category_id, COUNT(film_id) AS film_counts
+    FROM
+        film_category
+    GROUP BY category_id) AS category_counts
+        JOIN
+    category USING (category_id)
+WHERE
+    category_counts.film_counts > (SELECT 
+            AVG(film_counts)
+        FROM
+            (SELECT 
+                category_id, COUNT(film_id) AS film_counts
+            FROM
+                film_category
+            GROUP BY category_id) as category_counts2);
+            
+            
+-- 2.1 
+	-- Peliculas de la categoría "Children"
+SELECT 
+    film_id, title
+FROM
+    film
+        JOIN
+    film_category USING (film_id)
+WHERE
+    category_id = (SELECT 
+            category_id
+        FROM
+            category
+        WHERE
+            name = 'Children');
+
+	-- Películas nunca alquiladas
+Select film_id, title from film as f1;
+
+
+SELECT 
+    f.film_id, f.title
+FROM
+    film AS f
+WHERE
+    NOT EXISTS( SELECT 
+            1
+        FROM
+            inventory AS i
+                JOIN
+            rental USING (inventory_id)
+        WHERE
+            f.film_id = i.film_id);
+
+
+
+SELECT 
+    actor_id, first_name, last_name
+FROM
+    actor
+WHERE
+    EXISTS( SELECT 
+            1
+        FROM
+            film_actor
+                JOIN
+            film USING (film_id)
+        WHERE
+            length > 120
+                AND film_actor.actor_id = actor.actor_id);
+
+-- 4 
+	-- Ejercicio 1
+    SELECT 
+    film_id, title, length
+FROM
+    film
+WHERE
+    length > (SELECT 
+            AVG(length)
+        FROM
+            film);
+	-- Ejercicio 2
+    SELECT 
+    actor_id, CONCAT(first_name,' ',  last_name) AS actor
+FROM
+    actor
+WHERE
+    EXISTS( SELECT 
+            1
+        FROM
+            film_actor
+                JOIN
+            film USING (film_id)
+                JOIN
+            film_category USING (film_id)
+        WHERE
+            category_id = (SELECT 
+                    category_id
+                FROM
+                    category
+                WHERE
+                    name = 'Action')
+                AND film_actor.actor_id = actor.actor_id)
+        AND EXISTS( SELECT 
+            1
+        FROM
+            film_actor
+                JOIN
+            film_category USING (film_id)
+                JOIN
+            category USING (category_id)
+        WHERE
+            name = 'Comedy'
+                AND film_actor.actor_id = actor.actor_id)
+ORDER BY actor.last_name , actor.first_name;

@@ -1,3 +1,36 @@
 body{
     background-color: aliceblue;
+    font-family: sans-serif;
+
 }
+h1{
+    color: #008;
+    text-shadow: 3px 3px 4px black;
+}
+h2{
+    color: #448;
+}
+.top{
+    background-color: bisque;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+div+h2{
+    text-align: right;
+}
+.autor{
+    text-align: right;
+}
+
+
+.parrafos{
+    
+}
+.parrafos p:first-letter{
+    font-size: 200%;
+    font-weight: bolder;
+    color: #448;
+}
+
