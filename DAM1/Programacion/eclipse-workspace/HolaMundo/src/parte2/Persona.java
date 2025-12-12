@@ -9,7 +9,7 @@ abstract class Persona {
 		this.nombre = nom;
 		this.apellidos = ape;
 	}
-	abstract void funcionObligatoria(int x);
+	//abstract void funcionObligatoria(int x);
 
 	public void mostrar() {
 		System.out.println(this.apellidos + ", " + this.nombre);

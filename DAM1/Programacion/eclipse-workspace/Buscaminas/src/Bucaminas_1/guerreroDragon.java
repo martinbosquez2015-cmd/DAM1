@@ -24,7 +24,8 @@ public class guerreroDragon {
 		System.out.println("--------------");
 		System.out.println("Creando tablero...");
 		tablos.mostrarTableroSec();
-
+		tablos.contadorMinas();
+		tablos.mostrarTablero();
 		while (perdiste == false) {
 			System.out.println("Elige donde no hay minas...");
 			System.out.println("Elige la fila: ");
