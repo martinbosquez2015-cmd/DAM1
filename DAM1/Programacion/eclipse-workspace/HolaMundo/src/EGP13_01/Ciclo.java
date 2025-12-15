@@ -3,7 +3,7 @@ package EGP13_01;
 public class Ciclo {
 	private Modulo[] primero= new Modulo[8];
 	private Modulo[] segundo= new Modulo[8];
-	private String nombre;
+	private String nombre=null;
 	private String[] grados= {"Grado Medio", "Grado Superior"};
 	private String grado;
 	
@@ -29,4 +29,16 @@ public class Ciclo {
 			nomModulosSegundo++;
 		}
 	}
+	public String getNombre(){
+		return this.nombre;
+	}
+	public Modulo[] getModulos(int curso) {
+		Modulo[] modulos;
+		if(curso==1)
+			modulos = primero;
+		else
+			modulos= segundo;
+		return modulos;
+	}
+	
 }

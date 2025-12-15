@@ -16,5 +16,8 @@ public class Modulo {
 	public int getCurso() {
 		return this.year;
 	}
+	public String getNombre() {
+		return this.nombre;
+	}
 
 }

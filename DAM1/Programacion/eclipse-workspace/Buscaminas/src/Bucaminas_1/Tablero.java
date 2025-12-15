@@ -1,9 +1,12 @@
 package Bucaminas_1;
 
+import java.util.Arrays;
+
 public class Tablero {
 	private int lado;
 	private int minas;
 	private int[][] tabla;
+	private int[][] tablasec;
 	final static int MINA = -1;
 
 	public Tablero(int lados, int minas) {
@@ -24,14 +27,28 @@ public class Tablero {
 			System.out.println();
 		}
 	}
+	public void mostrarTablero2() {
+		for (int i = 0; i < lado; i++) {
+			for (int j = 0; j < lado; j++) {
+				if (tablasec[i][j] == -1) {
+					System.out.print(" " + tablasec[i][j] + "  ");
+				} else {
+					System.out.print("  " + tablasec[i][j] + "  ");
+				}
+			}
+			System.out.println();
+		}
+	}
 
 	public void mostrarTableroSec() {
 		for (int i = 0; i < lado; i++) {
 			for (int j = 0; j < lado; j++) {
 				if (tabla[i][j] == 0 || tabla[i][j] == MINA)
 					System.out.print("*" + "  ");
-				else if (tabla[i][j] == 9)
-					System.out.print(" " + "  ");
+				else if (tabla[i][j]>=0 && tablasec[i][j]==0)
+					System.out.println("*" + "  ");
+				else if (tabla[i][j] >=0  && tablasec[i][j]==9)
+					System.out.print(tabla[i][j] + "  ");
 			}
 			System.out.println();
 		}
@@ -48,6 +65,7 @@ public class Tablero {
 			}
 
 		}
+		this.tablasec=Arrays.copyOf(this.tabla, lado);
 	}
 
 	public boolean HayMinas(int f, int c) {
@@ -59,7 +77,9 @@ public class Tablero {
 	}
 
 	public void seguirJugando(int f, int c) {
-		this.tabla[f][c] = 9;
+		if(this.tabla[f][c]==0)
+			this.tabla[f][c] = 9;
+		this.tablasec[f][c]=9;
 	}
 
 	public void contadorMinas() {
@@ -118,8 +138,82 @@ public class Tablero {
 					this.tabla[i][j]= contador;
 					}
 				}
-				else if (i==this.lado)
+				else if (i==this.lado-1 && j!=0 && j!=this.lado-1) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i - 1][j] == MINA)
+							contador++;
+						if (this.tabla[i][j + 1] == MINA)
+							contador++;
+						if (this.tabla[i][j - 1] == MINA)
+							contador++;
+						if (this.tabla[i - 1][j + 1] == MINA)
+							contador++;
+						if (this.tabla[i - 1][j - 1] == MINA)
+							contador++;
+						this.tabla[i][j]=contador;
+					}
+				}
+				else if(j==this.lado-1 && i!=0 && i!=this.lado-1) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i - 1][j] == MINA)
+							contador++;
+						if (this.tabla[i + 1][j] == MINA)
+							contador++;
+						if (this.tabla[i][j - 1] == MINA)
+							contador++;
+						if (this.tabla[i + 1][j - 1] == MINA)
+							contador++;
+						if (this.tabla[i - 1][j - 1] == MINA)
+							contador++;
+						this.tabla[i][j] = contador;
+					}
+				}
+				else if(i==0 && j==0) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i][j + 1] == MINA)
+							contador++;
+						if (this.tabla[i + 1][j] == MINA)
+							contador++;
+						if (this.tabla[i + 1][j + 1] == MINA)
+							contador++;
+						this.tabla[i][j] = contador;
+					}
+				}
+				else if(i==this.lado-1 && j==0) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i - 1][j] == MINA)
+							contador++;
+						if (this.tabla[i][j + 1] == MINA)
+							contador++;
+						if (this.tabla[i - 1][j + 1] == MINA)
+							contador++;
+						this.tabla[i][j] = contador;
+					}
+				}
+				else if(i==this.lado-1 && j==this.lado-1) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i - 1][j] == MINA)
+							contador++;
+						if (this.tabla[i][j - 1] == MINA)
+							contador++;
+						if (this.tabla[i - 1][j - 1] == MINA)
+							contador++;
+						this.tabla[i][j] = contador;
+					}
+				}
+				else if(i==0 && j==this.lado-1) {
+					if (this.tabla[i][j] != MINA) {
+						if (this.tabla[i + 1][j] == MINA)
+							contador++;
+						if (this.tabla[i][j - 1] == MINA)
+							contador++;
+						if (this.tabla[i + 1][j - 1] == MINA)
+							contador++;
+						this.tabla[i][j] = contador;
+					}
+				}
 			}
+			
 		}
 	}
 

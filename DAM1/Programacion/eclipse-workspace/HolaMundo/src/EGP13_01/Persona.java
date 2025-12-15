@@ -30,10 +30,14 @@ class Alumno extends Persona{
 		super.mostrar();
 		System.out.println(edad/*+"\n"+ciclo+"\n"+grupo*/);
 	}
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return this.nombre;
+	}
 }
 
 class Profesor extends Persona{
-	private String tutor;
+	private Grupo tutoria= null;
 	private String departamento;
 	public Profesor(String nom, String ape/*, Grupo g*/, String dep) {
 		super(nom, ape);
@@ -42,4 +46,11 @@ class Profesor extends Persona{
 		//this.tutor=g.Nom();
 		this.departamento=dep;
 	}
+	public void setTutoria(Grupo grupo) {
+		this.tutoria = grupo;
+	}
+	public String getNombre() {
+		return this.nombre;
+	}
+	
 }

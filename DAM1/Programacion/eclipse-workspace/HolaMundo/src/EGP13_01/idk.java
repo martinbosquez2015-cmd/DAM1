@@ -17,15 +17,25 @@ public class idk {
 		c1.anyadeModulo(bases);
 		
 		
-		Grupo g1 = new Grupo("DAM1",c1,1,28);
+		Grupo g1 = new Grupo("DAM1",c1,2,4);
 		
 		Alumno A1= new Alumno("Juan", "Perez", 19);
+		Alumno A2= new Alumno("ssss","sdawd",20);
+		Alumno A3= new Alumno("aaaa","eeeee",18);
 		
 		Profesor p1= new Profesor("Alvin", "De la Concepcion",  "Informática");
 		
 		
 		A1.mostrar();
-		
+		p1.setTutoria(g1);
+		g1.anyadeTutor(p1);
+		g1.anyadeAlumno(A1);
+		g1.anyadeAlumno(A1);
+		g1.anyadeAlumno(A1);
+		g1.anyadeAlumno(A1);
+		g1.verGrupo();
+	
+
 	}
 
 }

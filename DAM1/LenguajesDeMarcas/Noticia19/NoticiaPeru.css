@@ -1,0 +1,27 @@
+.titulo-vengadores{
+    font-size: 20px;
+    text-align: center;
+    border: 10px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
+    justify-content: center;
+    margin-left: 40%;
+}
+.vengadoresPeru{
+    height: 400px;
+    width: 700px;
+    border: 10px solid red;
+}
+.flex-container-vengadores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.div-texto-vengadores{
+    width: 35%;
+}
+.div-video-vengadores{
+    width: 45%;
+    margin-right: 200px;
+}

@@ -262,7 +262,7 @@ WHERE
             film);
 	-- Ejercicio 2
     SELECT 
-    actor_id, CONCAT(first_name,' ',  last_name) AS actor
+    actor_id, CONCAT(first_name, ' ', last_name) AS actor
 FROM
     actor
 WHERE
@@ -294,3 +294,5 @@ WHERE
             name = 'Comedy'
                 AND film_actor.actor_id = actor.actor_id)
 ORDER BY actor.last_name , actor.first_name;
+	-- Ejercicio 3
+
