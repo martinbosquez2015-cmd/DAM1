@@ -295,4 +295,94 @@ WHERE
                 AND film_actor.actor_id = actor.actor_id)
 ORDER BY actor.last_name , actor.first_name;
 	-- Ejercicio 3
+    SELECT 
+    c.customer_id, c.first_name, c.last_name
+FROM
+    customer AS c
+        JOIN
+    (SELECT 
+        r.customer_id, COUNT(*) AS rentals
+    FROM
+        rental AS r
+    GROUP BY r.customer_id) AS t ON t.customer_id = c.customer_id
+    where t.rentals= (SELECT 
+    MAX(x.rentals)
+FROM
+    (SELECT 
+        r2.customer_id, COUNT(*) AS rentals
+    FROM
+        rental AS r2
+    GROUP BY r2.customer_id) AS x);
+    
+    -- Ejercicio 4: categoría Sports
+    SELECT 
+    f.title
+FROM
+    film AS f
+        JOIN
+    film_category AS fc USING (film_id)
+        JOIN
+    category AS c USING (category_id)
+WHERE
+    c.name = 'SPORTS'
+        AND NOT EXISTS( SELECT 
+            *
+        FROM
+            inventory AS i
+                JOIN
+            rental AS r USING (inventory_id)
+        WHERE
+            f.film_id = i.film_id
+                AND YEAR(r.rental_date) = 2005);
+    
+    
+-- 5 EJERCICIOS RESUELTOS
+	-- 1. Derivada -Peliculas por idioma
+    SELECT 
+    l.language_id, l.name, t.films_in_language
+FROM
+    (SELECT 
+        f.language_id, COUNT(*) AS films_in_language
+    FROM
+        film AS f
+    GROUP BY f.language_id) AS t
+    join language as l on t.language_id=l.language_id
+    order by t.films_in_language desc, l.name;
+    
+    -- 2. Derivada -Idiomas con longitud media superior a 110 minutos
+    SELECT 
+    l.language_id, l.name AS language_name, s.avg_length
+FROM
+    (SELECT 
+        f.language_id, AVG(f.length) AS avg_length
+    FROM
+        film AS f
+    GROUP BY language_id) AS s
+        JOIN
+    language AS l USING (language_id)
+WHERE
+    s.avg_length > 110;
+    
+    -- 3. Derivada -Maximo y minimo replacement_cost por idioma
+    SELECT 
+    l.language_id,
+    l.name AS language_name,
+    m.max_replacement_cost,
+    m.min_replacement_cost
+FROM
+    (SELECT 
+        f.language_id,
+            MAX(f.replacement_cost) AS max_replacement_cost,
+            MIN(f.replacement_cost) AS min_replacement_cost
+    FROM
+        film AS f
+    GROUP BY language_id) AS m
+        JOIN
+    language AS l ON l.language_id = m.language_id
+ORDER BY l.language_id;
+
+	-- 
+    
+    
+    
 
