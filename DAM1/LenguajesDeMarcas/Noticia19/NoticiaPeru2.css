@@ -1,9 +1,9 @@
-.titulo-noticiaPeru {
+.titulo-noticiaPeru2 {
     background-color: rgb(215, 240, 237);
     border-radius: 10px;
     box-shadow: 0px 100px 100px rgb(194, 248, 239);
 }
-.titulo-vengadores{
+.titulo-oso{
     font-size: 20px;
     text-align: center;
     border: 10px solid black;
@@ -13,27 +13,27 @@
     justify-content: center;
     margin-left: 40%;
 }
-.vengadoresPeru{
+.grinchOso{
     height: 400px;
     width: 700px;
     border: 5px solid red;
     border-radius: 10px;
 }
-.flex-container-vengadores{
+.flex-container-oso{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.div-texto-vengadores{
+.div-texto-oso{
     width: 35%;
-    margin-top: 55px;
+    margin-top: 60px;
     margin-left: 40px;
 }
-.div-video-vengadores{
+.div-video-oso{
     width: 45%;
     margin-right: 200px;
 }
-.subtitulo-vengadores{
+.subtitulo-oso{
     text-align: center;
     font-size: 20px;
 }
