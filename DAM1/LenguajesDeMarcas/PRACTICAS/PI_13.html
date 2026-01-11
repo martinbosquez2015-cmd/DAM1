@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuenti</title>
+    <link rel="stylesheet" href="PI_13.css">
+</head>
+<body>
+    <div class="logo">
+
+    </div>
+    <div class="content">
+        <div class="cabecera">
+            <div class="titulo">
+                <h1>Únete a Tuenti <span>Todos los campos son obligatorios</span></h1>
+            </div>
+            <div class="seleccionIdioma">
+                <select name="idioma" id="idioma">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+        <div class="formulario">
+            <form action="nosexd.html" method="post" >
+                <div class="campos">
+                    <label for="name">
+                        Nombre:
+                    </label>
+                    <input type="text" placeholder="Nombre" name="user_name">
+                    <input type="text" placeholder="Apellido" name="user_name">
+                    <br>
+                    <label for="mail">
+                        Email:
+                    </label>
+                    <input type="email" id="email" name="user_email">
+                    <br>
+                    <label for="sexo">
+                        Sexo 
+                    </label>
+                    <input type="radio" id="onvre" name="setso" value="Hombre">
+                    <label for="Hombre">Hombre</label>
+                    <input type="radio" id="mujeh" name="setso" value="Mujer">
+                    <label for="Mujer">Mujer</label>
+                    <br>
+                    <label for="nacimiento">
+                        Fecha de Nacimiento
+                    </label>
+                    <input list="dia" name="nacimiento" placeholder="Día">
+                    <datalist id="dia">
+                        <option value="1"></option>
+                        <option value="2"></option>                        
+                        <option value="3"></option>    
+                        <option value="4"></option>    
+                        <option value="5"></option>
+                        <option value="6"></option>    
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                        <option value="11"></option>
+                        <option value="12"></option>
+                        <option value="13"></option>
+                        <option value="14"></option>
+                        <option value="15"></option>
+                        <option value="16"></option>
+                        <option value="17"></option>
+                        <option value="18"></option>    
+                        <option value="19"></option>
+                        <option value="20"></option>
+                        <option value="21"></option>
+                        <option value="22"></option>
+                        <option value="23"></option>
+                        <option value="24"></option>
+                        <option value="25"></option>
+                        <option value="26"></option>
+                        <option value="27"></option>
+                        <option value="28"></option>
+                        <option value="29"></option>
+                        <option value="30"></option>
+                        <option value="31"></option>
+                    </datalist>
+                    <input list="mes" placeholder="Mes" name="nacimiento">
+                    <datalist id="mes">
+                        <option value="Enero"></option>
+                        <option value="Febrero"></option>
+                        <option value="Marzo"></option>
+                        <option value="Abril"></option>
+                        <option value="Mayo"></option>
+                        <option value="Junio"></option>
+                        <option value="Julio"></option>
+                        <option value="Agosto"></option>
+                        <option value="Septiembre"></option>
+                        <option value="Octubre"></option>
+                        <option value="Noviembre"></option>
+                        <option value="Diciembre"></option>
+                    </datalist>
+                    <input list="anyo" placeholder="Año" name="nacimiento">
+                    <datalist id="anyo">
+                        <option value="2025"></option>
+                        <option value="2024"></option>
+                        <option value="2023"></option>
+                        <option value="2022"></option>
+                    </datalist>
+                    <br>
+                    <label for="contrasenya">
+                        Contraseña
+                    </label>
+                    <input type="text" id="contrasenya" name="contrasenya">
+                    <br>
+                    <label for="Tel">
+                        Número de Móvil
+                    </label>
+                    <select name="num" id="cod_num">
+                        <option value="34">+34 E</option>
+                    </select>
+                    <input type="tel" name="num" id="num" pattern="[67]{1}[0-9]{8}" maxlength="9">
+                </div>
+                <div class="politicas">
+                    <label>
+                        <input type="checkbox" id="politicas_priv" value="politicas_priv" /> 
+                        Aceptas las Condiciones de uso y Política de pivacidad de Tuenti y que Tuenti te 
+                        envíe
+                    </label>
+                        <br />
+                </div>
+                boton jeje
+            </form>
+        </div>
+    </div>
+
+    <form>
+
+    <legend>Tamaño del zumo de fruta</legend>
+    <p>
+      <input type="radio" name="size" id="size_1" value="small" />
+      <label for="size_1">Pequeño</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_2" value="medium" />
+      <label for="size_2">Mediano</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_3" value="large" />
+      <label for="size_3">Grande</label>
+    </p>
+ 
+</form>
+<form action="/my-handling-form-page" method="post">
+  <ul>
+    <li>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="user_name" placeholder=""/>
+      <input type="text" id="lName" name="user_lName" />
+    </li>
+    <li>
+      <label for="mail">Correo electrónico:</label>
+      <input type="email" id="mail" name="user_mail" />
+    </li>
+    <li>
+      <label for="msg">Mensaje:</label>
+      <textarea id="msg" name="user_message"></textarea>
+    </li>
+  </ul>
+</form>
+<select id="colores" name="colores_favoritos" multiple>
+  <option value="rojo">Rojo</option>
+  <option value="azul">Azul</option>
+  <option value="verde">Verde</option>
+</select>
+<select name="cursos">
+  <optgroup label="Lenguajes de Programación">
+    <option value="js">JavaScript</option>
+    <option value="py">Python</option>
+  </optgroup>
+  <optgroup label="Herramientas Web">
+    <option value="css">CSS</option>
+    <option value="html">HTML</option>
+  </optgroup>
+</select>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    background-color: cornflowerblue;
+    font-family: sans-serif;
+}
+
+.logo{
+    margin: 2em auto;
+}
+
+.content{
+    background-color: white;
+    padding: 2em;
+}
+
+.cabecera{
+ display:flex;
+    flex-wrap:wrap;
+    gap: 1.5em;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.titulo{
+    font-size: 0.7em;
+}
+.titulo span{
+    font-weight: 100;
+    font-size: 0.5em;
+    color: gray;
+}
+.seleccionIdioma{
+   font-size: 0.6em;
+}
+.seleccionIdioma select{
+    border-style: none;
+    color: blue;
+}
+.campos{
+   margin: auto;
+   width: 90%;
+}
+.formulario{
+  width: 100%;
+}
