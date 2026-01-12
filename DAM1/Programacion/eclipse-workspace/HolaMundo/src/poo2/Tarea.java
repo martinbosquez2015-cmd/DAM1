@@ -39,9 +39,15 @@ public class Tarea {
 	}
 
 	public static void mostrarTareas() {
-		for (Tarea tarea : lista) {
-			tarea.mostrar();
-		}
+		Iterator<Tarea> iterador = lista.iterator();
+		while(iterador.hasNext()) {
+			Tarea t = iterador.next();
+			t.mostrar();
+			}
+		
+		/*for (Tarea tarea : lista) {
+		tarea.mostrar(); //otra forma de mostrar las tareas
+		}*/
 	}
 
 	public static void mostrarCompletada() {
@@ -56,6 +62,9 @@ public class Tarea {
 	}
 
 	public void eliminarTarea() {
-		lista.remove(lista.indexOf(this));
+		//lista.remove(lista.indexOf(this));
+		if(lista.remove(this)== false)
+			System.err.println("No puedo eliminar la tarea, no esiste");
+		
 	}
 }

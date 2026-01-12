@@ -11,8 +11,11 @@ public class Main {
 		//t1.mostrar();
 		//t2.mostrar();
 		
+		t2.eliminarTarea();
+		t2.eliminarTarea();
 		Tarea.mostrarTareas();
 		//Tarea.mostrarCompletada();
 	}
 
 }
+entidad bancaria tiene sucursales, cuentas corrientes, y clientes 
