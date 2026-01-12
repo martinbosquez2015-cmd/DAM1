@@ -381,8 +381,64 @@ FROM
     language AS l ON l.language_id = m.language_id
 ORDER BY l.language_id;
 
-	-- 
+	-- 4. Correlacionada: Idiomas con al menos una película rating R
+    use sakila;
+    select * from film limit 1;
+    SELECT 
+    l.language_id, l.name AS language_name
+FROM
+    language AS l
+WHERE
+    EXISTS( SELECT 
+            1
+        FROM
+            film AS f
+        WHERE
+            l.language_id = f.language_id
+                AND rating = 'R');
+                
+	-- 5. Escalar: número total de idiomas distintos presentes en film
+    SELECT 
+    COUNT(DISTINCT (language_id))
+FROM
+    film; 
     
+    SELECT 
+    (SELECT 
+            COUNT(DISTINCT (language_id))
+        FROM
+            film AS f) AS film_languages;
+    #perra mamadota
+    
+    -- 6. Escalar: número de películas con clasificacón 'R'
+    SELECT 
+    (SELECT 
+            COUNT(1)
+        FROM
+            film AS f
+        WHERE
+            rating = 'R') AS R_rated_movies;
+    
+    -- 7. CTE WITH: actores con más de 30 películas
+    
+    with film_counts as(select fa.actor_id, count(fa.film_id) as total_films from film_actor as fa group by fa.actor_id)
+    select a.actor_id,concat(a.first_name,' ', a.last_name) as actors_name, fc.total_films from actor as a join film_counts as fc using(actor_id)
+    where fc.total_films>=30 order by fc.total_films desc;
+
+
+-- 6. Para practicar
+    -- 6.7. Derivada-Idioma con más películas
+    SELECT 
+    l.language_id, l.name, t.d_lang
+FROM
+    (SELECT 
+        f.language_id, COUNT(f.film_id) AS d_lang
+    FROM
+        film AS f
+    GROUP BY f.language_id) AS t
+        JOIN
+    language AS l USING (language_id)
+LIMIT 1;
     
     
 
