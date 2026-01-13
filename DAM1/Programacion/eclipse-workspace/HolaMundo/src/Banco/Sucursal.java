@@ -11,7 +11,7 @@ public class Sucursal {
 	private String codigo;
 	
 	private static ArrayList<CuentasCorrientes> cuentas= new ArrayList<>();
-	private static ArrayList<Cliente> clientes = new ArrayList<>();
+	private ArrayList<Cliente> clientes = new ArrayList<>();
 	
 	public Sucursal(Banco banco, String calle, int numero, int codigoPostal, String ciudad, String codigo) {
 		this.banco= banco;
@@ -41,6 +41,20 @@ public class Sucursal {
 		System.out.println(this.ciudad);
 		System.out.println(this.codigo);
 		System.out.println("-----------------------------");
+	}
+	public void listarClientes() {
+		System.out.printf("Sucursal: %S / Código: (%s)\n", this.ciudad, this.codigo);
+		for(Cliente c: clientes)
+			System.out.printf(" - %s, %s(%s)\n",c.getApellido(),c.getNombre(),c.getNif());
+	}
+	public String getCodigoGlande() {
+		return this.banco.getCodigo()+" "+ this.codigo;
+	}
+	public String getCiudad() {
+		return this.ciudad;
+	}
+	public String getCodigo() {
+		return this.codigo;
 	}
 	
 }

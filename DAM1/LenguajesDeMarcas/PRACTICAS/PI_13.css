@@ -1,13 +1,35 @@
 body{
-    background-color: cornflowerblue;
+    background-color: #007ac2;
     font-family: sans-serif;
 }
-
+.Mainbos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    width: 100%;
+    
+    flex-direction: column;
+}
 .logo{
-    margin: 2em auto;
+       display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+    margin: 1em auto;
+
 }
 
+.cFlex{
+      display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+    margin: 1em auto;
+}
 .content{
+    width: 700px;
     background-color: white;
     padding: 2em;
 }
@@ -34,12 +56,49 @@ body{
 }
 .seleccionIdioma select{
     border-style: none;
-    color: blue;
+    color: #007ac2 ;
+    background-color: white;
+}
+.nombreFlex{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4em;
 }
 .campos{
-   margin: auto;
-   width: 90%;
+     display: flex;
+    flex-wrap: wrap;
+    gap:  1em;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em auto;
+   width: 85%;
 }
 .formulario{
-  width: 100%;
+  padding: 0 5em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.politicas{
+    text-align: justify;
+}
+.boton{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: right;
+}
+.boton input{
+    background-color: #007ac2;
+    border-radius: 0.3em 0.3em;
+    width: 14em;
+    height: 3em;
+    border-style: none;
+    font-weight: 900;
+    color: white;
+}
+a{
+    color: #007ac2;
 }
