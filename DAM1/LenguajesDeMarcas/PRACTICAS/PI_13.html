@@ -30,15 +30,15 @@
                     <label for="name">
                         Nombre:
                     </label>
-                    <input type="text" placeholder="Nombre" name="user_name">
-                    <input type="text" placeholder="Apellido" name="user_name">
+                    <input type="text" placeholder="Nombre" name="user_name" required>
+                    <input type="text" placeholder="Apellido" name="user_name" required>
                     <br>
                   </div>
                   <div class="nombreFlex">
                     <label for="mail">
                         Email:
                     </label>
-                    <input type="email" id="email" name="user_email">
+                    <input type="email" id="email" name="user_email" required>
                     <br>
                   </div>
                   <div class="nombreFlex">
@@ -55,7 +55,7 @@
                        <label for="nacimiento">
                         Fecha de Nacimiento
                     </label>
-                    <input list="dia" name="nacimiento" placeholder="Día">
+                    <input class="nacimiento" list="dia" name="nacimiento" placeholder="Día" required>
                     <datalist id="dia">
                         <option value="1"></option>
                         <option value="2"></option>                        
@@ -89,7 +89,7 @@
                         <option value="30"></option>
                         <option value="31"></option>
                     </datalist>
-                    <input list="mes" placeholder="Mes" name="nacimiento">
+                    <input class="nacimiento" list="mes" placeholder="Mes" name="nacimiento" required>
                     <datalist id="mes">
                         <option value="Enero"></option>
                         <option value="Febrero"></option>
@@ -104,41 +104,46 @@
                         <option value="Noviembre"></option>
                         <option value="Diciembre"></option>
                     </datalist>
-                    <input list="anyo" placeholder="Año" name="nacimiento">
+                    <input class="nacimiento" list="anyo" placeholder="Año" name="nacimiento" required>
                     <datalist id="anyo">
                         <option value="2025"></option>
                         <option value="2024"></option>
                         <option value="2023"></option>
                         <option value="2022"></option>
                     </datalist>
+                    
                     <br>
                     </div>
-                   
+                   <p class="anyos">La edad minima es 14.</p>
                     <div class="nombreFlex">
                       <label for="contrasenya">
                         Contraseña
                     </label>
-                    <input type="password" id="contrasenya" name="contrasenya">
+                    <input type="password" id="contrasenya" name="contrasenya" required>
                     <br>
                     </div>
-                   
+                   <p class="consejos">
+                    <a href="https://www.youtube.com/watch?v=_9bj-NnCG3E" target="_blank">
+                        Consejos para elegir una contraseña
+                    </a>
+                    </p>
                     <div class="nombreFlex">
                        <label for="Tel">
                         Número de Móvil
                     </label>
-                    <select name="num" id="cod_num">
+                    <select name="num" id="cod_num" required>
                         <option value="34">+34 E</option>
                     </select>
-                    <input type="tel" name="num" id="num" pattern="[67]{1}[0-9]{8}" maxlength="9">
+                    <input type="tel" name="num" id="num" pattern="[67]{1}[0-9]{8}" maxlength="9" required>
                     </div>
                    
                 </div>
                 <div class="politicas">
                     <label>
-                        <input type="checkbox" id="politicas_priv" value="politicas_priv" /> 
-                        Aceptas las <a href="www.ticarte.com.">Condiciones de uso</a> y la <a href="www.ticarte.com.">Política de pivacidad</a> de Tuenti y que Tuenti te 
+                        <input type="checkbox" id="politicas_priv" value="politicas_priv" required/> 
+                        Aceptas las <a href="www.ticarte.com." target="_blank">Condiciones de uso</a> y la <a href="www.ticarte.com." target="_blank">Política de pivacidad</a> de Tuenti y que Tuenti te 
                         envíe comunicaciones, incluso por vía electrónica.
-                        Lee un resumen en el <a href="www.ticarte.com.">Decálogo de las Condiciones de uso</a>
+                        Lee un resumen en el <a href="www.ticarte.com." target="_blank">Decálogo de las Condiciones de uso</a>
 
                     </label>
                         <br />

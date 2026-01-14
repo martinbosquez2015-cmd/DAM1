@@ -47,7 +47,7 @@ body{
     font-size: 0.7em;
 }
 .titulo span{
-    font-weight: 100;
+    font-weight: 200;
     font-size: 0.5em;
     color: gray;
 }
@@ -59,10 +59,18 @@ body{
     color: #007ac2 ;
     background-color: white;
 }
+
+.seleccionIdioma select:hover{
+    color: #75bce5;
+}
+
 .nombreFlex{
     display: flex;
     flex-wrap: nowrap;
     gap: 0.4em;
+}
+.nombreFlex input{
+    padding: 0.5em;
 }
 .campos{
      display: flex;
@@ -73,6 +81,9 @@ body{
     margin: 1em auto;
    width: 85%;
 }
+#email{
+    width: 60%;
+}
 .formulario{
   padding: 0 5em;
     width: 100%;
@@ -80,9 +91,25 @@ body{
     flex-wrap: wrap;
 
 }
-
+.nacimiento{
+    width: 30%;
+}
+.anyos{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    font-weight:100
+}
+.consejos{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+}
 .politicas{
     text-align: justify;
+    margin: 2.3em 0;
 }
 .boton{
     display: flex;
@@ -90,6 +117,11 @@ body{
     width: 100%;
     justify-content: right;
 }
+.boton input:hover{
+    background-color: #1184c7;
+     transform: scale(1.05);
+}
+
 .boton input{
     background-color: #007ac2;
     border-radius: 0.3em 0.3em;
@@ -101,4 +133,10 @@ body{
 }
 a{
     color: #007ac2;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #1184c7;
+    text-decoration: underline;
 }

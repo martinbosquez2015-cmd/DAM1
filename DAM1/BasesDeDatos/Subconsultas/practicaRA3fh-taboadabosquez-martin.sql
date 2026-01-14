@@ -73,32 +73,47 @@ WHERE
             p.customer_id = c.customer_id);
             
 -- 5) Cliente(s) que más ha(n) gastado en cada país
+    
     SELECT
-    co.country,
-    CONCAT(c.first_name, ' ', c.last_name) AS top_customer,
-    SUM(p.amount) AS max_spent
-FROM payment as p
-JOIN customer as c ON c.customer_id = p.customer_id
-JOIN address as a ON a.address_id = c.address_id
-JOIN city as ci ON ci.city_id = a.city_id
-JOIN country as co ON co.country_id = ci.country_id
-GROUP BY co.country, c.customer_id
-HAVING SUM(p.amount) = (
-    SELECT MAX(t.total_spent)
+    t.country,
+    CONCAT(t.first_name, ' ', t.last_name) AS top_customer,
+    t.total_spent AS max_spent
+FROM (
+    SELECT
+        co.country,
+        co.country_id,
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        SUM(p.amount) AS total_spent
+    FROM payment as p
+    JOIN customer as c ON c.customer_id = p.customer_id
+    JOIN address as  a ON a.address_id = c.address_id
+    JOIN city as ci ON ci.city_id = a.city_id
+    JOIN country as co ON co.country_id = ci.country_id
+    GROUP BY co.country_id, co.country, c.customer_id
+) as t
+JOIN (
+    SELECT
+        country_id,
+        MAX(total_spent) AS max_spent
     FROM (
         SELECT
-            co2.country_id,
-            SUM(p2.amount) AS total_spent
-        FROM payment as p2
-        JOIN customer as c2 ON c2.customer_id = p2.customer_id
-        JOIN address as a2 ON a2.address_id = c2.address_id
-        JOIN city as ci2 ON ci2.city_id = a2.city_id
-        JOIN country as co2 ON co2.country_id = ci2.country_id
-        GROUP BY co2.country_id, c2.customer_id
-    ) t
-    WHERE t.country_id = co.country_id
-)
-ORDER BY co.country ASC;
+            co.country_id,
+            SUM(p.amount) AS total_spent
+        FROM payment p
+        JOIN customer c ON c.customer_id = p.customer_id
+        JOIN address a ON a.address_id = c.address_id
+        JOIN city ci ON ci.city_id = a.city_id
+        JOIN country co ON co.country_id = ci.country_id
+        GROUP BY co.country_id, c.customer_id
+    ) as x
+    GROUP BY country_id
+) as m
+ON m.country_id = t.country_id
+AND m.max_spent = t.total_spent
+ORDER BY t.country ASC;
+    
 -- 6) Categorías con ingresos superiores a la media global
 	SELECT
     c.name AS category,
