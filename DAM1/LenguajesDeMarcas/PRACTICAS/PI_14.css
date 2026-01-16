@@ -1,0 +1,83 @@
+body{
+    font-family: sans-serif;
+    background-color: #379e;
+}
+.Main{
+    height: 80%;
+    width: 50%;
+    background-color: white;
+    margin:  auto;
+    border-radius: 1.2em;
+    margin-top: 2em;
+}
+
+
+.cabecera{
+    background-color: #334;
+    border-radius: 1.2em 1.2em 0 0;
+    padding: 1em;
+    text-align: center; 
+}
+
+.cabecera h1{
+    color: white;
+}
+
+.BigBox{
+    padding: 2em;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.subCabecera{
+    text-align: center;
+
+}
+.subCabecera h3{
+    font-weight: lighter;
+}
+label{
+    color: gray;
+
+}
+.BigBox input{
+    width: 90%;
+    padding: 1em;
+    border-radius: 0.6em;
+    border-style: solid;
+}
+
+.BigBox select{
+    width: 90%;
+    padding: 1em;
+    border-radius: 0.6em;
+    border-style: solid;
+    background-color: white;
+}
+.BigBox textarea{
+    width: 90%;
+    padding: 1em;
+    border-radius: 0.6em;
+    border-style: solid;
+}
+.recomendacion{
+    display: flex;
+   justify-content: space-between;
+}
+.recomendacion1{
+    display: flex;
+    gap: 0.2em;
+}
+.correo{
+    background-color: #334;
+    padding: 1em ;
+    border-radius: 1.2em;
+    display: flex;
+    flex-direction: column;
+    
+}
+.correo input{
+    width: 85%;
+}

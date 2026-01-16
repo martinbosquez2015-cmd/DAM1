@@ -5,6 +5,7 @@ public class CentroMedico {
 	private String codigo;
 	private ArrayList<Paciente> pacientes = new ArrayList<>();
 	private ArrayList<Medico> matasanos = new ArrayList<>();
+	private ArrayList<Consulta> consultas = new ArrayList<>();
 	
 	public CentroMedico(String nombre, String codigo) {
 		this.nombre= nombre;
@@ -16,6 +17,9 @@ public class CentroMedico {
 	}
 	public void addPaciente(Paciente p) {
 		pacientes.add(p);
+	}
+	public void addConsulta(Consulta c) {
+		consultas.add(c);
 	}
 	public void chanceCenter(CentroMedico cm2, Paciente p) {
 		this.pacientes.remove(p);

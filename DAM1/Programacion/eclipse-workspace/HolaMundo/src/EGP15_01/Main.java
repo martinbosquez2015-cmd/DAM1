@@ -1,5 +1,5 @@
 package EGP15_01;
-
+import java.time.*;
 public class Main {
 
 	public static void main(String[] args) {
@@ -40,6 +40,27 @@ public class Main {
 		cm3.listarMedicos();
 		
 		cm1.listarPacientes();
+		
+		Consulta cons1= new Consulta(p3, m1,LocalDate.now(), "Lele pancha", "Tome awita");
+		Consulta cons11  = new Consulta(p1, m1, LocalDate.now(), "Dolor abdominal", "Tomar agua y reposo");
+		Consulta cons2  = new Consulta(p2, m4, LocalDate.now(), "Dolor de cabeza", "Paracetamol cada 8 horas");
+		Consulta cons3  = new Consulta(p3, m7, LocalDate.now(), "Fiebre", "Ibuprofeno y reposo");
+		Consulta cons4  = new Consulta(p4, m4, LocalDate.now(), "Alergia", "Antihistamínico diario");
+		Consulta cons5  = new Consulta(p5, m1, LocalDate.now(), "Dolor de espalda", "Ejercicios y analgésico");
+		Consulta cons6  = new Consulta(p6, m4, LocalDate.now(), "Tos persistente", "Jarabe y líquidos");
+		Consulta cons7  = new Consulta(p7, m7, LocalDate.now(), "Presión alta", "Control diario y dieta");
+		Consulta cons8  = new Consulta(p8, m7, LocalDate.now(), "Gastritis", "Omeprazol en ayunas");
+		Consulta cons9  = new Consulta(p9, m1, LocalDate.now(), "Ansiedad", "Terapia y respiración");
+		Consulta cons10 = new Consulta(p10, m4, LocalDate.now(), "Dolor muscular", "Reposo y calor local");
+
+		
+		//cons1.mostrarGen();
+		
+		//m1.listarConsultas();
+		
+		p1.listarConsultas();
+		
+		//c
 
 		
 	}
