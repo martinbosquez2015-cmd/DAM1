@@ -24,4 +24,9 @@ thisdict = {
 print(type(thisdict))
 thisdict = dict(name = "John", age = 36, country = "Norway")
 print(thisdict)
-print(paise_mapoblao[])
+print(paise_mapoblao)
+
+#así ordenamos el diccionario por la posicion
+sorted(paise_mapoblao.items(), key=lambda paise: paise[1], reverse= True)
+
+
