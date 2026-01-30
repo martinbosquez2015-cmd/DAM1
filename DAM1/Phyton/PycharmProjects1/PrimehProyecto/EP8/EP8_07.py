@@ -1,21 +1,27 @@
 from random import randint
 def main():
+    print("EnciptadoryDesencriptadordeMensajesinador versión 1.7.2")
     dic_cif=cifrado()
-    opcion= input("Quiere encriptar o desencriptar?(E/D): ")
-    opcion = opcion.upper()
-    if opcion == "E":
-        encriptacion(dic_cif)
-    elif opcion == "D":
-        desencriptar(dic_cif)
-    else:
-        print("Opcion invalida")
+    si= False
+    while not si:
+        opcion= input("Quiere encriptar, desencriptar, mostrar diccionario o salir?(E/D/M/S): ")
+        opcion = opcion.upper()
+        if opcion == "E":
+            encriptacion(dic_cif)
+        elif opcion == "D":
+            desencriptar(dic_cif)
+        elif opcion == "M":
+            print(dic_cif)
+        elif opcion == "S":
+            si= True
+        else:
+            print("Opcion invalida")
 
 
 def encriptacion(dic_cif):
-    dic_cif=cifrado()
     mensaje = input("Escribe el mensaje a encriptar: ")
     print(menscifrado(dic_cif, mensaje))
-    print(dic_cif)
+
 
 def cifrado():
     dick={}
@@ -48,19 +54,22 @@ def menscifrado(dic, mens):
         mens_cif_extra+= str(randint(1,9))
         mens_cif_extra_s=mens_cif_extra.replace(" ","")
     return mens_cif_extra
-    print(dic.items())
-    print(dic.keys())
-    print(dic.values())
+
+
 
 def desencriptar(dic_cif):
     mens_encriptado= str(input("Escribe el mensaje a desencriptar: "))
+    mens_encriptado= mens_encriptado.replace(" ","")
     mens_desencriptado=""
     while len(mens_encriptado)%2 != 0:
         mens_encriptado = mens_encriptado[:len(mens_encriptado)-1]
     for i in range(0, len(mens_encriptado), 2):
         num= int(mens_encriptado[i:i+2])
-        letra=  [letra for letra, val in dic_cif.items() if val==num]
+        clave = next((k for k, v in dic_cif.items() if v == num), None)
+        mens_desencriptado+=clave
 
+
+    print(mens_desencriptado)
 
 
 
