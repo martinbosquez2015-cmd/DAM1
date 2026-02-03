@@ -16,12 +16,18 @@ public class Main {
 		Paciente paciente1 = new Paciente("Antonio Costa");
 		Paciente paciente2 =  new Paciente("Inés Rodrigo");
 		
+		especialidad1.listarMedicos();
+		especialidad2.listarMedicos();
+		especialidad3.listarMedicos();
+		especialidad4.listarMedicos();
+		
+		/*
 		paciente1.pideCita(especialidad3);
 		paciente1.pideCita(especialidad1);
 		paciente2.pideCita(especialidad2);
 		paciente2.pideCita(especialidad1);
 		paciente2.pideCita(especialidad1);
-		
+		*/
 
 	}
 
