@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.ArrayList;
 class Medico extends Persona{
 	private Especialidad especialidad;
-	private ArrayList<String> nananana = new ArrayList<>();
+	private ArrayList <String> nananana = new ArrayList<>();
 	private int contadorCitas = 0;
 	
 	

@@ -5,23 +5,24 @@ import java.util.Arrays;
 public class Tablero {
 	private int lado;
 	private int minas;
-	private int[][] tabla;
+	private Casilla[][] tabla;
 	private int[][] tablasec;
 	final static int MINA = -1;
 
 	public Tablero(int lados, int minas) {
 		this.lado = lados;
 		this.minas = minas;
-		this.tabla = new int[lado][lado];
+		this.tabla = new Casilla[lado][lado];
 	}
 
 	public void mostrarTablero() {
 		for (int i = 0; i < lado; i++) {
 			for (int j = 0; j < lado; j++) {
-				if (tabla[i][j] == -1) {
-					System.out.print(" " + tabla[i][j] + "  ");
+				Casilla casilla = tabla[i][j];
+				if (casilla.getNumero() == -1) {
+					System.out.print(" " + casilla.getNumero() + "  ");
 				} else {
-					System.out.print("  " + tabla[i][j] + "  ");
+					System.out.print("  " + casilla.getNumero() + "  ");
 				}
 			}
 			System.out.println();
@@ -41,14 +42,14 @@ public class Tablero {
 	}
 
 	public void mostrarTableroSec() {
+		
 		for (int i = 0; i < lado; i++) {
 			for (int j = 0; j < lado; j++) {
-				if (tabla[i][j] == 0 || tabla[i][j] == MINA)
+				Casilla casilla = tabla[i][j];
+				if (casilla.getBoolean() == false)
 					System.out.print("*" + "  ");
-				else if (tabla[i][j]>=0 && tablasec[i][j]==0)
-					System.out.println("*" + "  ");
-				else if (tabla[i][j] >=0  && tablasec[i][j]==9)
-					System.out.print(tabla[i][j] + "  ");
+				else 
+					System.out.println(casilla.getNumero() + "  ");
 			}
 			System.out.println();
 		}
@@ -59,26 +60,28 @@ public class Tablero {
 		while (numMina != minas) {
 			int fila = (int) (Math.random() * this.lado);
 			int columna = (int) (Math.random() * this.lado);
-			if (this.tabla[fila][columna] == 0) {
-				this.tabla[fila][columna] = MINA;
+			Casilla casilla = tabla[fila][columna];
+			if (casilla.getNumero() == 0) {
+				casilla.setNumero(MINA);
 				numMina++;
 			}
 
 		}
-		this.tablasec=Arrays.copyOf(this.tabla, lado);
 	}
 
 	public boolean HayMinas(int f, int c) {
 		boolean haymina = false;
-		if (this.tabla[f][c] == MINA) {
+		Casilla casilla = tabla[f][c];
+		if (casilla.getNumero() == MINA) {
 			haymina = true;
 		}
 		return haymina;
 	}
 
 	public void seguirJugando(int f, int c) {
-		if(this.tabla[f][c]==0)
-			this.tabla[f][c] = 9;
+		Casilla casilla = tabla[f][c];
+		if(casilla.getNumero()==0)
+			casilla.setBoolean(true);
 		this.tablasec[f][c]=9;
 	}
 
