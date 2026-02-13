@@ -4,6 +4,13 @@ public class Casilla {
 	private int numero=0;
 	private boolean descubierto= false;
 	
+	public Casilla(int numero, boolean desc) {
+		this.numero=numero;
+		this.descubierto=desc;
+	}
+	public static Casilla crearCasilla(int n, boolean s) {
+		return new Casilla(n,s);
+	}
 	
 	public int getNumero(){
 		return this.numero;
