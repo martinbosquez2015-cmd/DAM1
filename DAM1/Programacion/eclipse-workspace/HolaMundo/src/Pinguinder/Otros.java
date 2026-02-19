@@ -1,13 +1,14 @@
 package Pinguinder;
 
 class Otros extends Persona{
-	public Otros(String nombre,String nacimiento, int busco) {
-		super(nombre,nacimiento,busco);
-		
+	public Otros(Guinder g, String nombre,String nacimiento, int busco) {
+		super(g, nombre,nacimiento,busco);
+		g.anyade(this);
 	}
 	
-	public Otros(String nombre,String nacimiento, int busco, int minimo, int maximo) {
-		super(nombre,nacimiento,busco, minimo, maximo);
+	public Otros(Guinder g, String nombre,String nacimiento, int busco, int minimo, int maximo) {
+		super(g, nombre,nacimiento,busco, minimo, maximo);
+		g.anyade(this);
 	}
 
 }
