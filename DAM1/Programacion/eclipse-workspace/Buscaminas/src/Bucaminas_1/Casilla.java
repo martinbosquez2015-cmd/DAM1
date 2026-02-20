@@ -24,4 +24,7 @@ public class Casilla {
 	public void setBoolean(boolean si) {
 		this.descubierto=si;
 	}
+	public boolean isInZona(Casilla casilla) {
+		return Zona.getZona(casilla)== Zona.getZona(this);
+	}
 }

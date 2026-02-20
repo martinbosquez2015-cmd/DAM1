@@ -30,36 +30,90 @@ public class Tablero {
 			for (int j = 0; i < this.lado; j++) {
 				// acabar el analizador para que cree las zonas
 				Casilla casilla = this.tabla[i][j];
-				if (i == 0 && j == 0) {
-					Zona zona1 = new Zona(this.tabla[i][j]);
-					if (this.tabla[i][j + 1].getNumero() == casilla.getNumero())
-						zona1.setCasilla(this.tabla[i][j + 1]);
-					if (this.tabla[i + 1][j].getNumero() == casilla.getNumero())
-						zona1.setCasilla(this.tabla[i + 1][j]);
-				}
-				else {
-					if (casilla.isInArea()==false){//funcion para saber si la casilla está en alguna de las zonas
-					Zona zona = Zona.crearZona(casilla);
-					if (i == 0 && j != 0 && j != this.lado - 1) {//para analizar 
-						if (this.tabla[i][j].getNumero() != MINA) {
-							if (this.tabla[i][j + 1].getNumero() == MINA)
-								contador++;
-							if (this.tabla[i + 1][j].getNumero() == MINA)
-								contador++;
-							if (this.tabla[i][j - 1].getNumero() == MINA)
-								contador++;
-							if (this.tabla[i + 1][j + 1].getNumero() == MINA)
-								contador++;
-							if (this.tabla[i + 1][j - 1].getNumero() == MINA)
-								contador++;
-							this.tabla[i][j].setNumero(contador);
-						}
+				Zona zona = new Zona();
+				if (casilla.getNumero() == 0) {
+					if (Zona.isInArea(casilla)) // funcion para saber si la casilla está en alguna de las
+						// zonas0
+						zona = Zona.getZona(casilla);
+
+					if (i == 0 && j == 0) {
+						if (this.tabla[i][j + 1].getNumero() == 0)
+							zona.setCasilla(this.tabla[i][j + 1]);
+						if (this.tabla[i + 1][j].getNumero() == 0)
+							zona.setCasilla(this.tabla[i + 1][j]);
 					}
-					
+
+					else if (i == 0 && j != 0 && j != this.lado - 1) {// para analizar las de centro arriba
+						// hay que acabar el analizador y tabien hay que hacer un unificador de zonas si
+						// es que dos zonas coinciden
+						// tambien sería bueno hacer solo zonas donde la casilla está vacía, o sea sea 0
+						// estos ifs son para por si queremos dividir las zonas
+						if (this.tabla[i][j - 1].getNumero() == casilla.getNumero()
+								&& this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+						else {
+							Zona.combineZona(casilla, this.tabla[i][j - 1]);
+						}
+						if (this.tabla[i + 1][j].getNumero() == casilla.getNumero()
+								&& this.tabla[i + 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i + 1][j]);
+						if (this.tabla[i][j + 1].getNumero() == casilla.getNumero()
+								&& this.tabla[i][j + 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j + 1]);
+					} else if (i == 0 && j == this.lado - 1) {// parte de esquina derecha superior
+						if (this.tabla[i][j - 1].getNumero() == 0 && this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+						if (this.tabla[i + 1][j].getNumero() == 0 && this.tabla[i + 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i + 1][j]);
+					} else if (i != 0 && j == 0 && i != this.lado - 1) {// parte izquierda centro
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i][j + 1].getNumero() == 0 && this.tabla[i][j + 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j + 1]);
+						if (this.tabla[i + 1][j].getNumero() == 0 && this.tabla[i + 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i + 1][j]);
+					} else if (j == this.lado - 1 && i != 0 && i != this.lado - 1) {// lado de centroderecha
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i + 1][j].getNumero() == 0 && this.tabla[i + 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i + 1][j]);
+						if (this.tabla[i][j - 1].getNumero() == 0 && this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+					} else if (i == this.lado - 1 && j == 0) {// lado ezquina izquierda
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i][j + 1].getNumero() == 0 && this.tabla[i][j + 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j + 1]);
+					} else if (i == this.lado - 1 && j != 0 && j != this.lado - 1) { // lado abajo centro
+
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i][j + 1].getNumero() == 0 && this.tabla[i][j + 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j + 1]);
+						if (this.tabla[i][j - 1].getNumero() == 0 && this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+					} else if (i == this.lado - 1 && j == this.lado - 1) {// esquina inferior izquierda
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i][j - 1].getNumero() == 0 && this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+					} else { // centro centralito
+
+						if (this.tabla[i - 1][j].getNumero() == 0 && this.tabla[i - 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i - 1][j]);
+						if (this.tabla[i][j + 1].getNumero() == 0 && this.tabla[i][j + 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j + 1]);
+						if (this.tabla[i + 1][j].getNumero() == 0 && this.tabla[i + 1][j].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i + 1][j]);
+						if (this.tabla[i][j - 1].getNumero() == 0 && this.tabla[i][j - 1].isInZona(casilla) == false)
+							zona.setCasilla(this.tabla[i][j - 1]);
+					}
 				}
 			}
 		}
 	}
+
+	
 
 	public void mostrarTablero() {
 		for (int i = 0; i < lado; i++) {

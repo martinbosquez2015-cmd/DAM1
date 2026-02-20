@@ -28,6 +28,7 @@ public class guerreroDragon {
 		System.out.println();
 		tablos.contadorMinas();
 		System.out.println();
+		tablos.creadorDeZonas();
 		//tablos.mostrarTablero();
 		//tablos.mostrarTablero2();
 		tablos.mostrarTableroSec();
