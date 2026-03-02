@@ -29,6 +29,8 @@
 	<section name="completion_proposal_size">
 		<item key="contextSelector.size.x" value="313"/>
 		<item key="contextSelector.size.y" value="213"/>
+		<item key="size.x" value="420"/>
+		<item key="size.y" value="239"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -119,6 +121,13 @@
 		<item key="DIALOG_Y_ORIGIN" value="92"/>
 		<item key="DIALOG_WIDTH" value="584"/>
 		<item key="DIALOG_HEIGHT" value="639"/>
+		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
+	</section>
+	<section name="NewEnumCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="678"/>
+		<item key="DIALOG_Y_ORIGIN" value="144"/>
+		<item key="DIALOG_WIDTH" value="570"/>
+		<item key="DIALOG_HEIGHT" value="562"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|10.0|0|GTK|1|"/>
 	</section>
 </section>
