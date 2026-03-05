@@ -2,14 +2,16 @@ package EGP23;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class EGP23_05 {
 	public static void main(String[] args) {
-		Path nombreFichero = Path.of("home/alumno/estadisticas");
+		Path nombreFichero = Path.of("/home/alumno/estadisticas.txt");
+		
 		ArrayList<String> lineas = null;
 		try{
-			lineas = ArrayList<String>) Files.readAllLines(nombreFichero);
-		}catch (Exceptrion e) {
+			lineas = (ArrayList<String>) Files.readAllLines(nombreFichero);
+		}catch (Exception e) {
 			System.out.println();
 		}
 		if(lineas != null) {
@@ -28,8 +30,11 @@ public class EGP23_05 {
 			double media = sumaAlturas/(contHombre+contMujer);
 			System.out.printf("Hombres: %d\n", contHombre);
 			System.out.printf("Mujeres: %d\n", contMujer);
-			System.out.printf("Estatura media: %.2f\n", contHombre);
+			System.out.printf("Estatura media: %.2f\n", media);
 			
+		}
+		else {
+			System.out.println("fichero vacío");
 		}
 	}
 }
