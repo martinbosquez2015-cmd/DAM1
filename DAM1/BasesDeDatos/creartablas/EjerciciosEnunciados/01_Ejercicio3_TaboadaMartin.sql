@@ -28,7 +28,7 @@ CREATE TABLE departamentos(
 CREATE TABLE proyectos (
     id_proyecto INT UNSIGNED AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
-    id_departamento INT UNSIGNED,
+    id_departamento INT UNSIGNED NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE,
     CONSTRAINT pk_proyectos PRIMARY KEY (id_proyecto),
