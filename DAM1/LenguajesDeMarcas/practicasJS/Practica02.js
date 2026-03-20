@@ -27,6 +27,9 @@ function helados(){
         ["Pote de 1/4",2.9]]);
     let nombre = prompt("Quien comprará helaos?");
     let presio = parseFloat(prompt("Cuanto tiene?"));
+    if(){
+        
+    }
     let temp = 0;
     let kTemp = "";
     helaos.forEach(function(value, key) {

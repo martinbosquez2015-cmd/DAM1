@@ -39,5 +39,5 @@ function validateName() {
 function validateEmail() {
     let value = "";
     value =  emailInput.value.trim();
-    if(!/^\s)
+    if(!/^\s    )
 }

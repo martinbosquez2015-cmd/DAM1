@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+
+<h1>Formulario de registro</h1>
+
+<form name="form1" onsubmit="return validar();">
+
+<div>
+<label>Nombre *</label>
+<input type="text" id="nombre">
+</div>
+
+<div>
+<label>Direccion *</label>
+<input type="text" id="direccion">
+</div>
+
+<div>
+<label>Edad *</label>
+<input type="text" id="edad">
+</div>
+
+<div>
+<label>Nivel de Estudios *</label>
+<select id="estudios">
+<option value="">Selecciona</option>
+<option>Ninguno</option>
+<option>Primarios</option>
+<option>Bachiller</option>
+<option>Grado</option>
+<option>Master</option>
+</select>
+</div>
+
+<div>
+<label>Contraseña *</label>
+<input type="password" id="pass1">
+</div>
+
+<div>
+<label>Repetir Contraseña *</label>
+<input type="password" id="pass2">
+</div>
+
+<div>
+<label>
+<input type="checkbox" id="acepto">
+He leído y acepto las condiciones
+</label>
+</div>
+
+<div>
+<span id="error">Algunos campos no son correctos, revísalos</span>
+</div>
+
+<button>Registrarse</button>
+
+</form>
+<script src="app.js"></script>
+</body>
+</html>
