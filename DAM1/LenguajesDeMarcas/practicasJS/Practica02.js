@@ -35,6 +35,15 @@ function helados(){
             kTemp = key;
         }
     })
+    if(temp ==0){
+        alert(`No mames, el ${nombre} está bien pinche pobre a la verga!`)
+        alert("JAJAJAJAJAJAJA")
+        alert("JAJAJAJAJAJAJA")
+        alert("JAJAJAJAJAJAJA")
+        alert("JAJAJAJAJAJAJA")
+        alert("JAJAJAJAJAJAJA")
+    }
+    else{
     alert(`A ${nombre} le alcanza hasta el ${kTemp} con un precio de ${temp} porque tiene ${presio}`)
-
-}
+    }
+} 
