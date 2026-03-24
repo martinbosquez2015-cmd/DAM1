@@ -22,8 +22,11 @@ public class ficheros4 {
 			modificarRegistro(fichero, 2, "Ana María", 33);
 			leerRegistro(fichero, 2);
 			leerRegistro(fichero, 5);
-			//anyadirRegistro(fichero, "Juan Carlos", 46);
+			anyadirRegistro(fichero, "Juan Carlos", 46);
 			listarAgenda(fichero);
+			borrarRegistro(fichero, 6);
+			listarAgenda(fichero);
+			leerRegistro(fichero, 6);
 
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
@@ -67,19 +70,24 @@ public class ficheros4 {
 				raf.seek(posicion);
 				String nombre = leerNombre(raf);
 				int edad = raf.readInt();
-				System.out.printf("Registro: %d - Nombre: %s. Edad: %d\n", registro, nombre, edad);
+				if (nombre.charAt(0) != '*')
+					System.out.printf("Registro: %d - Nombre: %s. Edad: %d\n", registro, nombre, edad);
+				else
+					System.out.println("Registro " + registro + " marcado para ser eliminado");
 			}
 		}
 	}
-	public static void listarAgenda(String fichero) throws Exception{
-		try (RandomAccessFile raf = new RandomAccessFile(fichero, "r")){
-			long numRegistros = raf.length()/TAMANYO_REGISTRO;
+
+	public static void listarAgenda(String fichero) throws Exception {
+		try (RandomAccessFile raf = new RandomAccessFile(fichero, "r")) {
+			long numRegistros = raf.length() / TAMANYO_REGISTRO;
 			System.out.println("Lista de todos los registros:");
-			for(int i=0; i<numRegistros; i++) {
-				raf.seek(i*TAMANYO_REGISTRO);
+			for (int i = 0; i < numRegistros; i++) {
+				raf.seek(i * TAMANYO_REGISTRO);
 				String nombre = leerNombre(raf);
 				int edad = raf.readInt();
-				System.out.printf(" - Registro: %d  |  Nombre: %20s  |  Edad: %d\n", i+1, nombre, edad);
+				if (nombre.charAt(0) != '*')
+					System.out.printf(" - Registro: %d  |  Nombre: %20s  |  Edad: %d\n", i + 1, nombre, edad);
 			}
 		}
 	}
@@ -101,20 +109,51 @@ public class ficheros4 {
 				System.out.printf("El registro más alto es el %d\n", raf.length() / TAMANYO_REGISTRO);
 			} else {
 				raf.seek(posicion);
-				escribirNombre(raf, nombre);
-				raf.writeInt(edad);
-				System.out.println("Registro: " + registro + " modificado correctamente");
+				if (leerNombre(raf).charAt(0) != '*') {
+					escribirNombre(raf, nombre);
+					raf.writeInt(edad);
+					System.out.println("Registro: " + registro + " modificado correctamente");
+				} else
+					System.out.println("Registro: " + registro + "ya borrado, no se puede modificar");
 
 			}
 		}
 	}
-	
+
 	public static void anyadirRegistro(String fichero, String nombre, int edad) throws Exception {
 		try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
 			raf.seek(raf.length());
 			escribirNombre(raf, nombre);
 			raf.writeInt(edad);
 			System.out.println("Registro grabado correctamente");
+		}
+	}
+
+	public static void borrarRegistro(String fichero, int registro) throws Exception {
+		try (RandomAccessFile raf = new RandomAccessFile(fichero, "rw")) {
+			long posicion = TAMANYO_REGISTRO * (registro - 1);
+			if (posicion >= raf.length()) {
+				System.out.printf("El registro %d no existe\n", registro);
+				System.out.printf("El registro más alto es el %d\n", raf.length() / TAMANYO_REGISTRO);
+			} else {
+				raf.seek(posicion);
+				String borrado = leerNombre(raf);
+				if (borrado.charAt(0) == '*')
+					System.out.println("El registro " + registro + " ya está borrado");
+				else {
+					String temp = "";
+					for (int i = 0; i < borrado.length(); i++) {
+						if (i == 0)
+							temp += "*";
+						else
+							temp += borrado.charAt(i);
+					}
+					raf.seek(posicion);
+					System.out.println(temp);
+					escribirNombre(raf, temp);
+					System.out.println("Borrado: " + registro + " eliminado correctamente");
+				}
+			}
 		}
 	}
 }
