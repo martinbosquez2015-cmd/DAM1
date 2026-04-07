@@ -18,6 +18,9 @@ public class ficheros1 {
 		metodo3();
 		System.out.println();
 		metodo4();
+		System.out.println();
+		metodo5();
+		
 		
 		
 
@@ -85,5 +88,23 @@ public class ficheros1 {
 			System.out.println(e.getMessage());
 		}
 		System.out.println(contenido);
+	}
+	
+	public static void metodo5() {
+		// El último método lee todo el contenido del fichero como un único String
+		Path ruta = Path.of("/home/alumno/DAM1/DAM1/Programacion/ficheros/fichero1/primero.txt");
+		String contenido = null;
+		try {
+			// leemos todo el contenido de una vez en un String
+			// cuidado que aquí los saltos de línea siguen existiendo. Si nuestro fichero tuviera dos lineas así
+			// uno
+			// dos
+			// contenido sería así: "uno\ndos"
+			// El \n simboliza el salto de línea y ocupa un solo caracter y no dos
+			contenido = Files.readString(ruta);
+		} catch (Exception e) {
+			System.out.println("Error al leer: " + e.getMessage());
+		}
+		System.out.print(contenido);
 	}
 }
