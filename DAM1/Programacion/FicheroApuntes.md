@@ -105,7 +105,7 @@ public static void lectura4() {
 
 5. __Método 5__: Este método te guarda todo el contenido en un string, los saltos de línea se representan con el caracter "\n" que aquí solo es uno na mas(pero honestamente no tengo ni idea de como aplicarlo)
     ``` 
-public static void lectura5() {
+	public static void lectura5() {
 		// El último método lee todo el contenido del fichero como un único String
 		Path ruta = Path.of("/home/josemaria/quijote.txt");
 		String contenido = null;
