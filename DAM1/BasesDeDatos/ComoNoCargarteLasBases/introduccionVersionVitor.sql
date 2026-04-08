@@ -137,3 +137,6 @@ select * from clientes;
 COMMIT; -- LOS MARCAMOS COMO DEFINITIVOS.
 select * from clientes;
 SET SQL_SAFE_UPDATES = 1;
+
+-- LAs transacciones solo funcionan con insterts updates o deletes, no funcionan con creacion o destruccion de tablas, si haces creacion de tablas se hace un commit automático yu te cargas todo alv
+-- El rollback hace que la transacción también termine, igualmente pasa cuendo vuelves a ejecutar un TRANSACTION
