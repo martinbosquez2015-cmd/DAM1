@@ -1,4 +1,4 @@
-package tareas;
+package defecto;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
