@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo [
+    <!ELEMENT catalogo (pelicula+)>
+    <!ELEMENT pelicula (titulo, director+, anio, genero?)>
+    <!ATTLIST pelicula
+    codigo ID #REQUIRED
+    idioma (ES | EN | FR) "ES">
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ELEMENT anio (#PCDATA)>
+    <!ELEMENT genero (#PCDATA)>
+    <!ENTITY rating "Mayores de 18 años">
+]>
+
+
+
+
+
+<catalogo>
+    <pelicula codigo="P001" idioma="EN">
+        <titulo>Inception</titulo>
+        <director>Christopher Nolan</director>
+        <anio>2010</anio>
+        <genero>Ciencia Ficción - &rating;</genero>
+    </pelicula>
+    <pelicula codigo="P002"> <titulo>Matrix</titulo>
+        <director>Lana Wachowski</director>
+        <director>Lilly Wachowski</director> <anio>1999</anio>
+    </pelicula>
+</catalogo>
