@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libreria SYSTEM "libreriaAnimes.dtd">
+<?xml-stylesheet type="text/xsl" href="estilos.xsl"?>
+
+<libreria>
+
+    <anime id="a1">
+        <titulo>Attack on Titan</titulo>
+        <sinopsis>Humanidad lucha contra titanes gigantes.</sinopsis>
+        <anio>2013</anio>
+        <episodios>87</episodios>
+        <estado>finalizado</estado>
+        <estudio>Wit Studio</estudio>
+        <valoracion>9.5</valoracion>
+        <autores>
+            <autor>
+                <nombre>Hajime Isayama</nombre>
+                <nacionalidad>Japón</nacionalidad>
+            </autor>
+        </autores>
+        <categorias>
+            <categoria tipo="principal">Acción</categoria>
+            <categoria>Drama</categoria>
+        </categorias>
+    </anime>
+
+    <anime id="a2">
+        <titulo>Naruto</titulo>
+        <sinopsis>Un ninja busca convertirse en Hokage.</sinopsis>
+        <anio>2002</anio>
+        <episodios>220</episodios>
+        <estado>finalizado</estado>
+        <estudio>Studio Pierrot</estudio>
+        <valoracion>8.3</valoracion>
+        <autores>
+            <autor>
+                <nombre>Masashi Kishimoto</nombre>
+                <nacionalidad>Japón</nacionalidad>
+            </autor>
+        </autores>
+        <categorias>
+            <categoria tipo="principal">Shonen</categoria>
+            <categoria>Aventura</categoria>
+        </categorias>
+    </anime>
+
+    <anime id="a3">
+        <titulo>Death Note</titulo>
+        <sinopsis>Un estudiante obtiene un cuaderno mortal.</sinopsis>
+        <anio>2006</anio>
+        <episodios>37</episodios>
+        <estado>finalizado</estado>
+        <estudio>Madhouse</estudio>
+        <valoracion>9.0</valoracion>
+        <autores>
+            <autor>
+                <nombre>Tsugumi Ohba</nombre>
+                <nacionalidad>Japón</nacionalidad>
+            </autor>
+        </autores>
+        <categorias>
+            <categoria tipo="principal">Suspense</categoria>
+            <categoria>Psicológico</categoria>
+        </categorias>
+    </anime>
+
+    <anime id="a4">
+        <titulo>Demon Slayer</titulo>
+        <sinopsis>Un joven combate demonios para salvar a su hermana.</sinopsis>
+        <anio>2019</anio>
+        <episodios>55</episodios>
+        <estado>en emision</estado>
+        <estudio>Ufotable</estudio>
+        <valoracion>8.7</valoracion>
+        <autores>
+            <autor>
+                <nombre>Koyoharu Gotouge</nombre>
+                <nacionalidad>Japón</nacionalidad>
+            </autor>
+        </autores>
+        <categorias>
+            <categoria tipo="principal">Acción</categoria>
+            <categoria>Fantasía</categoria>
+        </categorias>
+    </anime>
+
+    <anime id="a5">
+        <titulo>One Piece</titulo>
+        <sinopsis>Piratas en busca del tesoro legendario.</sinopsis>
+        <anio>1999</anio>
+        <episodios>1000</episodios>
+        <estado>en emision</estado>
+        <estudio>Toei Animation</estudio>
+        <valoracion>9.2</valoracion>
+        <autores>
+            <autor>
+                <nombre>Eiichiro Oda</nombre>
+                <nacionalidad>Japón</nacionalidad>
+            </autor>
+        </autores>
+        <categorias>
+            <categoria tipo="principal">Aventura</categoria>
+            <categoria>Comedia</categoria>
+        </categorias>
+    </anime>
+
+</libreria>

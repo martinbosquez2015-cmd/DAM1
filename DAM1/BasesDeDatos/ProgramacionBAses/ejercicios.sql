@@ -1,3 +1,4 @@
+-- bloque 1(solo tengo hecho el primer ejercicio, disculpe las molestias por solo presentar uno)
 DROP PROCEDURE ej1_alquiler_rapido;
 DELIMITER //
 CREATE PROCEDURE ej1_alquiler_rapido(
@@ -42,4 +43,5 @@ explain store;
 DELIMITER //
 
 CREATE PROCEDURE ej2_cambio_staff(
+
 )

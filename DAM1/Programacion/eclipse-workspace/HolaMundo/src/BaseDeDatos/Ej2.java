@@ -72,9 +72,9 @@ public class Ej2 {
 		Statement consulta = conexion.createStatement();
 		consulta.executeUpdate(query1);
 		boolean si = false;
-		String user="";
-		String email="";
-		String passwd="";
+		String user = "";
+		String email = "";
+		String passwd = "";
 		while (si == false) {
 			System.out.println("Por favor, Rellena los siguientes datos:");
 			System.out.println("  Nombre de usuario: ");
@@ -85,7 +85,7 @@ public class Ej2 {
 		}
 		si = false;
 		while (si == false) {
-			si= true;
+			si = true;
 			System.out.println("  Contraseña: ");
 			passwd = teclado.nextLine();
 			System.out.println("  Repita contraseña: ");
@@ -96,12 +96,13 @@ public class Ej2 {
 			}
 		}
 		String salt = generarSalt();
-		String hash = generarHash(passwd+salt);
+		String hash = generarHash(salt+passwd);
 		System.out.println(salt);
 		System.out.println("Longitud de la salt: " + salt.length());
 		System.out.println(hash);
 		System.out.println("Longitud del hash: " + hash.length());
-		PreparedStatement query2 = conexion.prepareStatement("INSERT INTO `registros`.`usuario`(`nombre`,`salt`,`hach`,`email`)VALUES(?, ?, ?, ?)");
+		PreparedStatement query2 = conexion.prepareStatement(
+				"INSERT INTO `registros`.`usuario`(`nombre`,`salt`,`hach`,`email`)VALUES(?, ?, ?, ?)");
 		query2.setString(1, user);
 		query2.setString(2, salt);
 		query2.setString(3, hash);
@@ -109,6 +110,7 @@ public class Ej2 {
 		query2.executeUpdate();
 
 	}
+
 	public static String generarSalt() {
 		SecureRandom azar = new SecureRandom();
 		byte[] salt = new byte[16];
@@ -116,34 +118,85 @@ public class Ej2 {
 		String saltTxt = Base64.getEncoder().encodeToString(salt);
 		return saltTxt;
 	}
+
 	public static String generarHash(String passwdSlt) {
-		String hashTxt=null;
+		String hashTxt = null;
 		try {
-		MessageDigest digest = MessageDigest.getInstance("SHA-512");
-		byte[] hash = digest.digest(passwdSlt.getBytes(StandardCharsets.UTF_8));
-		hashTxt= Base64.getEncoder().encodeToString(hash);
-		}catch(Exception e) {
+			MessageDigest digest = MessageDigest.getInstance("SHA-512");
+			byte[] hash = digest.digest(passwdSlt.getBytes(StandardCharsets.UTF_8));
+			hashTxt = Base64.getEncoder().encodeToString(hash);
+		} catch (Exception e) {
 			System.out.println("El algoritmo SHA-512 no está disponible");
 		}
 		return hashTxt;
 	}
-	public static boolean validadorUsuario(Connection conexion, String user, String email)throws SQLException{
-		boolean si= true;
-			PreparedStatement query2 = conexion.prepareStatement("SELECT nombre FROM usuario where nombre = ? and email = ?", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			query2.setString(1, user);
-			query2.setString(2, email);
-			ResultSet resultado = query2.executeQuery();
-			resultado.last();
-			if(resultado.getRow()!=0) {
-				si=false;
-				System.out.println("Error: el usuario o el correo ya está registrado.");
-			}
-			
+
+	public static boolean validadorUsuario(Connection conexion, String user, String email) throws SQLException {
+		boolean si = true;
+		PreparedStatement query2 = conexion.prepareStatement(
+				"SELECT nombre FROM usuario where nombre = ? or email = ?", ResultSet.TYPE_SCROLL_INSENSITIVE,
+				ResultSet.CONCUR_READ_ONLY);
+		query2.setString(1, user);
+		query2.setString(2, email);
+		ResultSet resultado = query2.executeQuery();
+		resultado.last();
+		if (resultado.getRow() != 0) {
+			si = false;
+			System.out.println("Error: el usuario o el correo ya está registrado.");
+		}
+
 		return si;
 	}
 
 	public static void login(Connection conexion, Scanner teclado) throws SQLException {
+		boolean si = false;
+		teclado.nextLine();
+		while (si == false) {
+			System.out.println("Introduzca su correo electrónico o el nombre de usuario: ");
+			String email = teclado.nextLine();
+			System.out.println("Introduzca la contraseña: ");
+			String passwd = teclado.nextLine();
+			String salt = getSaltByUser(conexion, email);
+			if (salt==null) {
+				System.out.println("Error: el usuario no está registrado");
+			}
+			else {
+				String hash = generarHash(salt+passwd);
+				si= validarClave(conexion, email, hash);
+				if(si==false) {
+					System.out.println("Error: La clave o el usuario son incorrectos.\nSi desea volver, presione s, si quiere intentar de nuevo\npresione cualquier tecla:");
+					String opc= teclado.nextLine();
+					if (opc.trim().equals("s")||opc.trim().equals("S"))
+						si=true;
+				}
+				else {
+					System.out.println("Estoy dentro");
+				}
+			}
+		}
+		
 
+	}
+	
+	public static String getSaltByUser(Connection conexion, String email) throws SQLException {
+		String salt= null;
+		PreparedStatement query2 = conexion.prepareStatement("SELECT * from usuario WHERE email=? or nombre=?");
+		query2.setString(1, email);
+		query2.setString(2, email);
+		ResultSet resultado = query2.executeQuery();
+		resultado.next();
+		if(resultado.getRow()!=0) {
+			salt = resultado.getString("salt");
+		}
+		return salt;
+	}
+	public static boolean validarClave(Connection conexion, String email, String hash) throws SQLException {
+		PreparedStatement query2 = conexion.prepareStatement("SELECT * from usuario WHERE email=? or nombre=?");
+		query2.setString(1, email);
+		query2.setString(2, email);
+		ResultSet resultado = query2.executeQuery();
+		resultado.next();
+		return resultado.getString("hach").equals(hash);
 	}
 
 	public static int validador1(Scanner teclado) {

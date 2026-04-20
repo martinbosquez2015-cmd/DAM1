@@ -1,0 +1,27 @@
+<!ELEMENT libreria (anime+)>
+
+<!ELEMENT anime (titulo, sinopsis, anio, episodios, estado, estudio, valoracion, autores, categorias)>
+<!ATTLIST anime 
+    id ID #REQUIRED
+>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT sinopsis (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT episodios (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT estudio (#PCDATA)>
+<!ELEMENT valoracion (#PCDATA)>
+
+<!ELEMENT autores (autor+)>
+
+<!ELEMENT autor (nombre, nacionalidad)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+
+<!ELEMENT categorias (categoria+)>
+
+<!ELEMENT categoria (#PCDATA)>
+<!ATTLIST categoria 
+    tipo (principal | secundaria) "secundaria"
+>
