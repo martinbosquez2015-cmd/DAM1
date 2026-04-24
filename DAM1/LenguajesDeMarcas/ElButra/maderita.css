@@ -1,91 +1,198 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
+/* --- Paleta de colores ---
+   Azul (Fondo): #8CDFF4
+   Naranja (Header/Botones): #F59A47
+   Café Claro (Banner secundario): #BS8A62
+   Café Medio/Gris (Textos/Iconos offcanvas/modal): #7S685D
+   Café Oscuro/Azulino (Títulos/Bordes): #6494A0
+*/
 
+/* --- Variables CSS de color --- */
+:root {
+  --blue-bg: #8CDFF4;
+  --orange-header: #F59A47;
+  --brown-light: #B58A62; /* Corregido de BS8A62 */
+  --brown-mid: #75685D; /* Corregido de 7S685D */
+  --blue-dark: #6494A0;
+  --black-maderita: #000000;
+  --destacados-red: #D2342C; /* Color para los textos 'DESTACADOS' */
+}
+
+/* --- General --- */
 body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Comic Relief";
 }
 
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  margin-bottom: 4rem;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+/* --- Header / Navbar --- */
+.header-naranja {
+  background-color: var(--orange-header) !important;
+  color: #fff;
+  border-bottom: 3px solid var(--black-maderita); /* Como en los bocetos */
 }
 
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
+/* Estilo del logo (Maderita) */
+.text-maderita {
+  font-family: 'Brush Script MT', cursive, sans-serif; 
+  font-size: 2.5rem;
+  color: var(--black-maderita) !important;
+  text-decoration: none;
 }
 
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+/* Botones con iconos (Lupa y Carrito) */
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--black-maderita);
+  padding: 5px 10px;
 }
-.marketing h2 {
-  font-weight: 400;
+.btn-icon:hover {
+  color: #fff;
 }
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+.btn-cart {
+  position: relative;
 }
 
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+/* Espaciado para compensar navbar fija */
+.header-spacing {
+  height: 80px; /* Ajustar según altura de navbar */
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
+/* --- Fondo principal --- */
+.main-blue-bg {
+  background-color: var(--blue-bg);
+  min-height: calc(100vh - 80px); /* Restar altura de navbar */
 }
 
+/* --- Carrusel --- */
+.banner-carousel-inner {
+  background-color: #fff;
+  min-height: 400px;
+  display: flex;
+}
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+.banner-content {
+  height: 400px;
+  overflow: hidden;
+}
 
-@media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
+.bg-cafe-light {
+  background-color: var(--brown-light);
+}
+
+.banner-img {
+  max-height: 350px;
+  z-image: 1;
+}
+
+/* Textos rotados "DES...TADOS!" */
+.text-destacados {
+  color: var(--destacados-red);
+  font-family: sans-serif;
+  z-index: 2;
+  font-size: 4rem !important; /* Más grande en desktop */
+}
+
+.rotate-neg-15 {
+  top: 15%;
+  left: 15%;
+  transform: rotate(-25deg);
+}
+
+.rotate-15-2 {
+  bottom: 15%;
+  right: 15%;
+  transform: rotate(20deg);
+}
+
+/* Ajustes de carrusel para móvil */
+@media (max-width: 768px) {
+  .banner-content {
+    height: 250px;
+    padding: 20px !important;
   }
-
-  .featurette-heading {
-    font-size: 50px;
+  .banner-carousel-inner {
+    min-height: 250px;
+  }
+  .banner-img {
+    max-height: 200px;
+  }
+  .text-destacados {
+    font-size: 2.5rem !important;
+  }
+  .rotate-neg-15 {
+    top: 5%;
+    left: 10%;
+    transform: rotate(-15deg);
+  }
+  .rotate-15-2 {
+    bottom: 5%;
+    right: 10%;
+    transform: rotate(15deg);
+  }
+  .header-spacing {
+    height: 70px;
   }
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
+/* --- Cards de producto --- */
+.product-card {
+  transition: transform 0.3s ease, shadow 0.3s ease;
+  overflow: hidden;
 }
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top-container {
+  background-color: #fff;
+  height: 200px;
+}
+
+.card-img {
+  max-height: 180px;
+  object-fit: contain;
+}
+
+/* Color de títulos en card */
+.text-blue-dark {
+  color: var(--blue-dark) !important;
+}
+
+/* Botón comprar (Naranja) */
+.btn-naranja {
+  background-color: var(--orange-header);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+.btn-naranja:hover, .btn-naranja:focus {
+  background-color: #e58d3c;
+  color: #fff;
+}
+.btn-naranja:active {
+  background-color: #cc7f36 !important;
+}
+
+/* --- Offcanvas --- */
+.bg-cafe-dark {
+  background-color: var(--brown-mid) !important;
+}
+
+/* --- Modal --- */
+#modalProductImg {
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.text-naranja {
+  color: var(--orange-header) !important;
+}
+
+/* --- Utilidades generales de color --- */
+.bg-blue-bg { background-color: var(--blue-bg) !important; }
+.bg-orange-header { background-color: var(--orange-header) !important; }
+.bg-brown-mid { background-color: var(--brown-mid) !important; }
