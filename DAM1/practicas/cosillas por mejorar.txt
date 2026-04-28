@@ -1,0 +1,30 @@
+es necesario un hover en la zona de entrar en correo
+- http://localhost:5173/es/schedule tiene una carta que no 
+tiene animación, a discutir si por cuestion de mantener coherencia con la 
+carta del principio
+	- mismo problema del email
+	- TAmbién me dan problemas con las fechas de contacto
+- http://localhost:5173/es/features tiene un borde en el logo que no 
+  pega con la temática de la página, tambien el emogi ahí no pega we nnms
+	- carta de promoción o plan recomendado no tiene animación
+	  estaría charo que cuando le haces un hover se levante, y 
+	  se ilumine haciendo una nimación
+
+- http://localhost:5173/es/pricing tiene cartas que no tienen animación y se siente
+  tosco
+	especialmente a comentar las cartas de arriba de los planes,
+	que las primeras dos no tienen animacion
+	siento que falta animacion en la tarjetita cerde de
+	"ahorra 18% o más"
+- http://localhost:5173/es/blog no me muestra noticias desde host
+  en la web no muestra imágenes, aprte hay noticias que dice que no están alv
+	- Laura existe unu
+
+
+
+
+
+
+Sugerencia del Chatbot luego del slogan de trabaja menos....
+
+

@@ -1,20 +1,12 @@
-/* --- Paleta de colores ---
-   Azul (Fondo): #8CDFF4
-   Naranja (Header/Botones): #F59A47
-   Café Claro (Banner secundario): #BS8A62
-   Café Medio/Gris (Textos/Iconos offcanvas/modal): #7S685D
-   Café Oscuro/Azulino (Títulos/Bordes): #6494A0
-*/
 
-/* --- Variables CSS de color --- */
 :root {
   --blue-bg: #8CDFF4;
   --orange-header: #F59A47;
-  --brown-light: #B58A62; /* Corregido de BS8A62 */
-  --brown-mid: #75685D; /* Corregido de 7S685D */
+  --brown-light: #B58A62;
+  --brown-mid: #75685D; 
   --blue-dark: #6494A0;
   --black-maderita: #000000;
-  --destacados-red: #D2342C; /* Color para los textos 'DESTACADOS' */
+  --destacados-red: #D2342C; 
 }
 
 /* --- General --- */
@@ -29,7 +21,7 @@ body {
 .header-naranja {
   background-color: var(--orange-header) !important;
   color: #fff;
-  border-bottom: 3px solid var(--black-maderita); /* Como en los bocetos */
+  border-bottom: 3px solid var(--black-maderita); 
 }
 
 /* Estilo del logo (Maderita) */
@@ -56,13 +48,13 @@ body {
 
 /* Espaciado para compensar navbar fija */
 .header-spacing {
-  height: 80px; /* Ajustar según altura de navbar */
+  height: 80px; 
 }
 
 /* --- Fondo principal --- */
 .main-blue-bg {
-  background-color: var(--blue-bg);
-  min-height: calc(100vh - 80px); /* Restar altura de navbar */
+  background-color: var(--blue-dark);
+  min-height: calc(100vh - 80px); 
 }
 
 /* --- Carrusel --- */
@@ -91,7 +83,7 @@ body {
   color: var(--destacados-red);
   font-family: sans-serif;
   z-index: 2;
-  font-size: 4rem !important; /* Más grande en desktop */
+  font-size: 4rem !important; 
 }
 
 .rotate-neg-15 {

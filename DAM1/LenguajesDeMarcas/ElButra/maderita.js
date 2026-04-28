@@ -13,31 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const products = {
     'jabalí': {
       title: 'Máscara de Jabalí Inosuke',
-      img: 'https://i.ibb.co/4KjVfF9/fotor-ai-2023102612002.png',
+      img: 'mask.jpg',
       description: 'Una réplica fiel y detallada de la icónica máscara de jabalí de Inosuke Hashibira de Demon Slayer. Fabricada con materiales ligeros para mayor comodidad, con un acabado de pelaje suave y ojos realistas.',
       price: '$45.00'
     },
     'tanto': {
-      title: 'Cuchillo Tanto Réplica de Inosuke',
-      img: 'https://i.ibb.co/1n5b6vP/fotor-ai-20231026120038.png',
-      description: 'Réplica de exhibición de los cuchillos aserrados que usa Inosuke. Hechos de resina y metal para coleccionistas. Nota: no son para combate.',
+      title: 'Kunais de Asuma Sarutobi',
+      img: 'https://farnoky.com/cdn/shop/files/naruto-sarutobi-asuma-knifefarnoky-7417907.jpg?v=1757245969',
+      description: 'Réplica de las famosas kunais del sensei de Shikamaru. Hechos de resina y metal para coleccionistas. Nota: no son para combate.',
       price: '$30.00'
     },
     'pin': {
       title: 'Pin Esmaltado Inosuke (Jabalí)',
-      img: 'https://i.ibb.co/3F9j5H4/fotor-ai-20231026120054.png',
+      img: 'https://www.1001hobbies.es/1998208-home_default/figpin-bm-227399-demon-slayer-inosuke-hashibara-figpin.jpg',
       description: 'Pin esmaltado de alta calidad con el diseño de la cabeza de jabalí de Inosuke. Perfecto para personalizar tu mochila, chaqueta o gorra.',
       price: '$8.50'
     },
     'amuleto': {
       title: 'Amuleto Péndulo Inosuke Spirit',
-      img: 'https://i.ibb.co/68vL7wV/fotor-ai-20231026120111.png',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwTDvC_bAQHmLMVR7q6etz7WRkbcwQQc2lw&s',
       description: 'Un elegante amuleto péndulo inspirado en la energía de Inosuke. Cristal de cuarzo y cadena metálica color bronce viejo.',
       price: '$12.00'
     },
     'colgante': {
       title: 'Colgante con Gemas Hashira Style',
-      img: 'https://i.ibb.co/N1pXwY3/fotor-ai-20231026120126.png',
+      img: 'https://img.joomcdn.net/395e79866a17164affe76eb6f30a8ac01976d91e_original.jpeg',
       description: 'Un colgante discreto con gemas de imitación azul y rojo, reflejando el espíritu indomable. Cadena incluida.',
       price: '$15.00'
     }
