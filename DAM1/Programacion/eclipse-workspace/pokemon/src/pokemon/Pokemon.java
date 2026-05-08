@@ -1,6 +1,6 @@
 package pokemon;
 
-public class Pokemon {
+public class Pokemon implements Comparable<Pokemon>{
 
 	private int codigo = 0;
 	private String nombre;
@@ -84,5 +84,34 @@ public class Pokemon {
 			}
 		}
 		
+	}
+	@Override
+	public String toString() {
+		String linea = "(#"+String.valueOf(this.codigo)+")"+this.nombre + "\n";
+		if(this.tipos[1]==null) {
+			linea += "Tipo: "+this.tipos[0]+"\n";
+			
+		}
+		else
+			linea+= "Tipos: "+this.tipos[0]+", "+this.tipos[1];
+		return linea;
+	}
+	@Override
+	public boolean equals(Object otro) {
+		boolean iguales = false;
+		Pokemon comparado =(Pokemon) otro;
+		if(this.codigo==comparado.codigo)
+			iguales=true;
+		return iguales;
+	}
+	
+	@Override
+	public int compareTo(Pokemon otro) {
+		int devolver = 0;
+		if(this.codigo>otro.codigo)
+			devolver =1;
+		else if(this.codigo<otro.codigo)
+			devolver=devolver -1;
+		return devolver;
 	}
 }

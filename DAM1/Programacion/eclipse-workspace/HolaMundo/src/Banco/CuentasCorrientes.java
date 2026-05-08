@@ -1,6 +1,6 @@
 package Banco;
 import java.util.*;
-public class CuentasCorrientes {
+public class CuentasCorrientes implements Comparable<CuentasCorrientes>{
 	private ArrayList<Cliente> titulare= new ArrayList<>();
 	private float saldo;
 	private Sucursal sucursal;
@@ -38,5 +38,29 @@ public class CuentasCorrientes {
 	}
 	public float getSaldo() {
 		return this.saldo;
+	}
+	
+	@Override
+	public int compareTo(CuentasCorrientes otra){
+		int devolver = 0;
+		if(this.saldo>otra.getSaldo())
+			devolver=1;
+		else if(this.saldo<otra.getSaldo())
+			devolver=-1;
+		return devolver;
+	}
+	@Override
+	public String toString() {
+		String linea = "==================\n Saldo: "+ this.saldo + "\n"+"Código: "+this.codigo+"\n";
+		if(titulare.size()==1) {
+			linea += "Cliente: "+ titulare.get(0).getNombre()+"\n";
+		}
+		else {
+			for(Cliente c: titulare) {
+				linea+= c.getNombre()+"|";
+				}
+			linea+="\n";
+		}
+		return linea;
 	}
 }
