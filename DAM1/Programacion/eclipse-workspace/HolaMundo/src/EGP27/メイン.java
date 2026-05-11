@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class メイン {
 
@@ -20,6 +21,17 @@ public class メイン {
 			System.out.println("ERROR: "+e.getMessage());
 		}
 		Pokemon.mostrar();
+		ArrayList <Pokemon> listaPokemon = new ArrayList<>();
+		listaPokemon= Pokemon.getCompleteList();
+		Collections.sort(listaPokemon);
+		
+		System.out.println("=======================================================");
+		System.out.println();
+		for(Pokemon p: listaPokemon) {
+			System.out.println("----------------------------");
+			System.out.println(p.toString());
+			System.out.println("----------------------------");
+		}
 		
 
 
@@ -29,6 +41,7 @@ public class メイン {
 		String query2 = "SELECT p.numero_pokedex, p.nombre, p.peso, p.altura, t.nombre FROM pokemon as p JOIN pokemon_tipo USING(numero_pokedex) JOIN tipo as t USING(id_tipo) where numero_pokedex = ?";
 		PreparedStatement consulta1 = conexion.prepareStatement(query1);
 		ResultSet resultado1= consulta1.executeQuery();
+		//no olvidarse siempre de posicionar el cursor antes de acceder a los resultados
 		while (resultado1.next()) {
 			PreparedStatement consulta2 = conexion.prepareStatement(query2,ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			consulta2.setInt(1, resultado1.getInt(1));
