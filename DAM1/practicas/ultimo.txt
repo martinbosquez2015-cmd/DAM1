@@ -1,0 +1,117 @@
+che gemini, con este código, necesito que me des las pautas para poder lograr aislar una carta y darle
+una animación de este tipo hover:-translate-y-2 transition-all duration-500 hover:[filter:drop-shadow(5px_5px_12px_rgba(59,130,246,0.4))]:
+'use client';
+
+import { Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { parseBoldText } from '../../utils';
+import type { TierName } from '../../types';
+
+interface PricingCardProps {
+  tier: TierName;
+  price: number;
+  onCTA: () => void;
+}
+
+export const PricingCard = ({ tier, price, onCTA }: PricingCardProps) => {
+  const t = useTranslations('pricing');
+  const tCommon = useTranslations('common');
+  const tierConfig = {
+    Starter: {
+      isPro: false,
+      bgClass: 'card-modern',
+      borderClass: '',
+      buttonClass: 'btn-primary border border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white',
+      tagClass: 'hidden'
+    },
+    Pro: {
+      isPro: true,
+      bgClass: 'bg-gradient-to-br from-primary-700 to-primary-600 rounded-xl px-10 py-10',
+      borderClass: 'border-2 border-primary-700',
+      buttonClass: 'btn-primary bg-white text-primary-700 hover:bg-gray-50',
+      tagClass: 'card-modern-input absolute top-2 right-2 px-3 py-1 rounded-bl-lg text-primary-700 font-semibold text-sm'
+    },
+    Master: {
+      isPro: false,
+      bgClass: 'card-modern',
+      borderClass: '',
+      buttonClass: 'btn-primary border border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white',
+      tagClass: 'hidden'
+    },
+    Agency: {
+      isPro: false,
+      bgClass: 'card-modern',
+      borderClass: '',
+      buttonClass: 'btn-primary border border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white',
+      tagClass: 'hidden'
+    }
+  };
+
+  const config = tierConfig[tier];
+  const isComingSoon = tier === 'Master' || tier === 'Agency';
+  const textColorClass = config.isPro ? 'text-white' : isComingSoon ? 'text-gray-400' : 'text-theme-primary';
+  const subtitleColorClass = config.isPro ? 'text-gray-100' : isComingSoon ? 'text-gray-400' : 'text-theme-secondary';
+
+  const tierKey = tier.toLowerCase();
+  const features = t.raw(`plans.${tierKey}.features`) as string[];
+
+  return (
+    <div
+      className={`${config.bgClass} ${config.borderClass} rounded-lg shadow-lg p-8 relative animate-slide-up flex flex-col h-full ${isComingSoon ? 'opacity-50 grayscale pointer-events-none' : ''}`}
+    >
+      {config.tagClass !== 'hidden' && (
+        <div className={config.tagClass}>
+          {t(`plans.${tierKey}.tag`)}
+        </div>
+      )}
+
+      <div className="flex-grow">
+        <h3 className={`text-xl font-semibold ${textColorClass} mb-2`}>
+          {t(`plans.${tierKey}.title`)}
+        </h3>
+
+        <div className={`flex items-center mb-6 min-h-[2.5rem] ${subtitleColorClass}`}>
+          {tier === 'Agency' ? (
+            <span className={`text-3xl font-bold ${textColorClass}`}>{t('plans.agency.price')}</span>
+          ) : (
+            <div>
+              <span className={`text-4xl font-bold ${textColorClass}`}>{price}</span>
+              <span className={`text-xl font-bold ml-1 ${textColorClass}`}>{t('plans.currency')}</span>
+              <span className={`${subtitleColorClass} ml-2`}>/ {tCommon('month')}</span>
+            </div>
+          )}
+        </div>
+
+        <div className={`${subtitleColorClass} text-sm mb-8 font-medium`}>
+          {t(`plans.${tierKey}.ad_spend_limit`)}
+        </div>
+
+        <ul className={`space-y-3 mb-8 ${textColorClass}`}>
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-start">
+              <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                <Check className={`w-5 h-5 ${config.isPro ? 'text-white' : isComingSoon ? 'text-gray-400' : 'text-theme-secondary'}`} />
+              </div>
+              <span className="text-sm">{parseBoldText(feature)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {isComingSoon ? (
+        <span
+          className="block w-full text-center py-3 px-4 rounded-md font-semibold mt-auto bg-gray-200 text-gray-500 cursor-default select-none"
+        >
+          {t('common.coming_soon')}
+        </span>
+      ) : (
+        <button
+          onClick={onCTA}
+          className={`${config.buttonClass} block w-full text-center py-3 px-4 rounded-md transition-colors font-semibold mt-auto`}
+        >
+          {t('common.get_started')}
+        </button>
+      )}
+    </div>
+  );
+};

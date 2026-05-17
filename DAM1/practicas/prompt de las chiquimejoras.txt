@@ -1,0 +1,582 @@
+che gemini, vi un problema en la página web, cuando cambio de idioma
+al inglés, la palabra "Marketing" ya no es la que resalta por sobre
+las demás, sino "updates", quiero que me des ideas sobre ocmo puedo cambiar eso, si necesitas que te invé algun otro archivo más avusame,
+por ahora te voy a mandar el archivo de la página y el json
+
+
+
+
+======================================================================
+che gemini, necesito que me ayudes con un problema: en las siguientes
+páginas hay una carta que sobresale por el color({/* Pro Plan - Highlighted */} en el page y {/* Pro Card: Autonomous Agency (Highlighted) */}), sin embargo
+no responde ante animaciones hover de css, en el caso de "{/* Pro Plan - Highlighted */}" se tuvo que frozar la animación con 
+"hover:-translate-y-2 transition-all duration-500 hover:[filter:drop-shadow(5px_5px_12px_rgba(59,130,246,0.4))]" pero cuando quiero forzarla de la misma manera
+en "/* Pro Card: Autonomous Agency (Highlighted) */" no funciona.
+quiero que me des ideas de cual puede ser el problema par apoder solucionarlo, en el caso de que necesites algun archivo más dentro del proyecto avísame.
+las páginas son las siguientes:
+ - principal:
+import { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import {
+  RefreshCw,
+  Target,
+  Feather,
+  Check,
+  X,
+  Sparkles,
+  BarChart3,
+  RefreshCcw,
+} from "lucide-react";
+import { Link } from "@/i18n/routing";
+import HomeClient from "./HomeClient";
+import HomeHero from "./HomeHero";
+import { parseBoldText } from "../utils";
+import CtaBanner from "../components/CtaBanner";
+import Subscribe from "../components/Subscribe";
+import BlogCard from "../components/BlogCard";
+import { fetchBlogPostsByLocale } from "../lib/blog";
+
+export async function generateMetadata(props: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const params = await props.params;
+  const locale = params.lang;
+  const t = await getTranslations({ locale, namespace: "seo.home" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords"),
+    alternates: {
+      canonical: `https://markettai.com/${locale}`,
+      languages: {
+        es: "https://markettai.com/es",
+        en: "https://markettai.com/en",
+        "x-default": "https://markettai.com/es",
+      },
+    },
+  };
+}
+
+export default async function Home(props: {
+  params: Promise<{ lang: string }>;
+}) {
+  const params = await props.params;
+  const locale = params.lang;
+  setRequestLocale(locale);
+
+  // Get all translations
+  const t = await getTranslations({ locale });
+
+  // Fetch blog posts from API/database
+  const allPosts = await fetchBlogPostsByLocale(locale);
+
+  const recentPosts = allPosts
+    .sort(
+      (a, b) =>
+        new Date(b.published_at || b.created_at).getTime() -
+        new Date(a.published_at || a.created_at).getTime()
+    )
+    .slice(0, 3);
+
+  const loading = false;
+
+  return (
+    <div className="bg-transparent">
+      <div id="top"></div>
+      <div className="flex-1">
+        {/* Block 1: Redesigned Hero Section (Authority & Value) */}
+        <HomeHero />
+
+        {/* Block 2: ROI and Pain Point Justification */}
+        <section className="py-20 bg-transparent">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-section-title text-theme-primary mb-4 animate-fade-in">
+                {t("home.moat.title")}
+              </h2>
+              <p className="text-body text-theme-primary max-w-2xl mx-auto animate-fade-in-delay">
+                {t("home.moat.subtitle")}
+              </p>
+              <p className="text-blue-400 max-w-2xl mx-auto animate-fade-in-delay font-semibold ">
+                {t("home.moat.highlight")}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="animate-slide-up-delay-1">
+                <div className="space-y-6">
+                  <div className="card-modern-2 flex items-start gap-4 px-8 py-6 rounded-xl border border-white/5 bg-white/5 transition-all hover:bg-white/10">
+                    <div className="mt-1 p-2 rounded-lg text-theme-primary">
+                      <Sparkles className="w-7 h-7" />
+                    </div>
+                    <p className="text-body text-theme-primary">
+                      {t("home.moat.point1")}
+                    </p>
+                  </div>
+                  <div className="card-modern-2 flex items-start gap-4 px-8 py-6 rounded-xl border border-white/5 bg-white/5 transition-all hover:bg-white/10">
+                    <div className="mt-1 p-2 rounded-lg text-theme-primary">
+                      <BarChart3 className="w-7 h-7" />
+                    </div>
+                    <p className="text-body text-theme-primary">
+                      {t("home.moat.point2")}
+                    </p>
+                  </div>
+                  <div className="card-modern-2 flex items-start gap-4 px-8 py-6 rounded-xl border border-white/5 bg-white/5 transition-all hover:bg-white/10">
+                    <div className="mt-1 p-2 rounded-lg text-theme-primary">
+                      <RefreshCcw className="w-7 h-7" />
+                    </div>
+                    <p className="text-body text-theme-primary">
+                      {t("home.moat.point3")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <HomeClient />
+            </div>
+            <div className="text-center mb-12 mt-16">
+              <h2 className="text-section-title text-theme-primary mb-4 animate-fade-in">
+                {t("home.moat.cardTitle")}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="card-modern text-center animate-slide-up-delay-1">
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.moat.card1.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.moat.card1.description"))}
+                </p>
+              </div>
+              <div className="card-modern text-center animate-slide-up-delay-1">
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.moat.card2.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.moat.card2.description"))}
+                </p>
+              </div>
+              <div className="card-modern text-center animate-slide-up-delay-3">
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.moat.card3.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.moat.card3.description"))}
+                </p>
+              </div>
+            </div>
+            <CtaBanner
+              title={t("home.roi_cta.title")}
+              buttonText={t("home.roi_cta.button")}
+              linkTo="/calculator"
+            />
+          </div>
+        </section>
+
+        {/* Block 3: Unique Mechanism (Sistema BOOST) */}
+        <div className="py-20 bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div className="text-center mb-16">
+              <h2 className="text-section-title text-theme-primary mb-4 animate-fade-in">
+                {t("home.roi.title")}
+              </h2>
+              <p className="text-body text-theme-primary max-w-2xl mx-auto animate-fade-in-delay">
+                {parseBoldText(t("home.roi.subtitle"))}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="card-modern text-center animate-slide-up-delay-1">
+                <div className="flex justify-center">
+                  <RefreshCw className="h-12 w-12 text-theme-primary mb-6" />
+                </div>
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.roi.metric1.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.roi.metric1.description"))}
+                </p>
+              </div>
+              <div className="card-modern text-center animate-slide-up-delay-1">
+                <div className="flex justify-center">
+                  <Target className="h-12 w-12 text-theme-primary mb-6" />
+                </div>
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.roi.metric2.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.roi.metric2.description"))}
+                </p>
+              </div>
+              <div className="card-modern text-center animate-slide-up-delay-3">
+                <div className="flex justify-center">
+                  <Feather className="h-12 w-12 text-theme-primary mb-6" />
+                </div>
+                <h3 className="text-card-title text-theme-primary mb-4">
+                  {t("home.roi.metric3.title")}
+                </h3>
+                <p className="text-body text-theme-primary">
+                  {parseBoldText(t("home.roi.metric3.description"))}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link href="/features" className="btn-primary">
+              {t("home.roi.cta")}
+            </Link>
+          </div>
+        </div>
+
+        {/* Block 4: SEO Authority / Blog Feed */}
+        <div className="bg-transparent py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-section-title text-theme-primary mb-4 animate-fade-in">
+                {t("home.blog_feed.title")}
+              </h2>
+              <p className="text-body text-theme-primary max-w-2xl mx-auto animate-fade-in-delay">
+                {t("home.blog_feed.subtitle")}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mb-12">
+              {loading
+                ? Array.from({ length: 3 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className="card-modern overflow-hidden animate-pulse"
+                    >
+                      <div className="w-full h-48 bg-gray-700 rounded-lg mb-6"></div>
+                      <div>
+                        <div className="h-6 bg-gray-700 rounded w-3/4 mb-3"></div>
+                        <div className="h-4 bg-gray-700 rounded w-full mb-4"></div>
+                        <div className="h-4 bg-gray-700 rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  ))
+                : recentPosts.map((post, index) => (
+                    <BlogCard
+                      key={post.id}
+                      post={post}
+                      index={index}
+                      locale={locale}
+                      translations={{
+                        readMore: t("common.readMore"),
+                        readingTime: t("blogPost.readingTime"),
+                      }}
+                    />
+                  ))}
+            </div>
+            <div className="text-center">
+              <Link href="/blog" className="btn-primary">
+                {t("home.blog_feed.cta")}
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Block 5: Simplified Pricing Teaser */}
+        <div className="py-20 bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-section-title text-theme-primary mb-4 animate-fade-in">
+                {t("home.pricing_teaser.title")}
+              </h2>
+              <p className="text-hero-subtitle text-theme-secondary max-w-3xl mx-auto mb-10">
+                {t("home.pricing_teaser.subtitle")}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-3xl mx-auto">
+              {/* Starter Plan */}
+              <div className="card-modern text-center animate-slide-up-delay-1 h-full">
+                <h3 className="text-section-title text-theme-primary mb-2">
+                  {t("home.pricing_teaser.starter.title")}
+                </h3>
+                <p className="text-body text-theme-primary mb-6">
+                  {t("home.pricing_teaser.starter.price")}
+                </p>
+                <div className="p-4 gap-4">
+                  <ul className="space-y-3 text-theme-primary">
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <Check className="w-5 h-5 text-theme-secondary" />
+                      </div>
+                      <span className="text-sm font-semibold">
+                        {t("home.pricing_teaser.starter.differentiator-1")}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <Check className="w-5 h-5 text-theme-secondary" />
+                      </div>
+                      <span className="text-sm font-semibold">
+                        {t("home.pricing_teaser.starter.differentiator-2")}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <X className="w-5 h-5 text-theme-secondary" />
+                      </div>
+                      <span className="text-sm">
+                        {t("home.pricing_teaser.starter.differentiator-3")}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Pro Plan - Highlighted */}
+              <div className="hover:-translate-y-2 transition-all duration-500 hover:[filter:drop-shadow(5px_5px_12px_rgba(59,130,246,0.4))] bg-primary-700/40 p-12 text-center rounded-2xl border-2 border-accent-primary bg-accent-primary/5 animate-slide-up-delay-1 h-full relative">
+                <div className="absolute top-0 right-0 bg-white text-primary-700 text-md font-bold py-1 px-3 rounded-bl-xl rounded-tr-xl">
+                  {t("home.pricing_teaser.pro.badge")}
+                </div>
+                <h3 className="text-section-title text-theme-primary mb-2">
+                  {t("home.pricing_teaser.pro.title")}
+                </h3>
+                <p className="text-body text-theme-primary mb-6">
+                  {t("home.pricing_teaser.pro.price")}
+                </p>
+                <div className="p-4">
+                  <ul className="space-y-3 text-theme-primary">
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <Check className="w-5 h-5 text-accent-primary" />
+                      </div>
+                      <span className="text-sm font-semibold">
+                        {t("home.pricing_teaser.pro.differentiator-1")}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <Check className="w-5 h-5 text-accent-primary" />
+                      </div>
+                      <span className="text-sm font-semibold">
+                        {t("home.pricing_teaser.pro.differentiator-2")}
+                      </span>
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5">
+                        <Check className="w-5 h-5 text-accent-primary" />
+                      </div>
+                      <span className="text-sm font-extrabold">
+                        {t("home.pricing_teaser.pro.differentiator-3")}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                href="/pricing"
+                className="btn-primary mt-12 px-10 py-3 text-lg font-bold inline-block"
+              >
+                {t("home.pricing_teaser.cta_all_plans")}
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Block 6: Final CTA (Conversion Closing) */}
+        <div className="bg-transparent py-20">
+          {/* TEMPORARY */}
+          {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center animate-fade-in">
+              <h2 className="text-section-title text-theme-primary mb-6">
+                {t('home.cta_final.title')}
+              </h2>
+              <p className="text-hero-subtitle text-theme-primary mb-10 max-w-2xl mx-auto">
+                {t('home.cta_final.subtitle')}
+              </p>
+              <Link href="/register" className="btn-primary animate-pulse-subtle">
+                {t('home.cta_final.button')}
+              </Link>
+            </div>
+          </div> */}
+          <Subscribe showSEO={false} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ - pagína features:
+
+import { type Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
+
+export async function generateMetadata(props: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const params = await props.params;
+  const locale = params.lang;
+  const t = await getTranslations({ locale, namespace: 'seo.features' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    alternates: {
+      canonical: `https://markettai.com/${locale}/features`,
+      languages: {
+        'es': 'https://markettai.com/es/features',
+        'en': 'https://markettai.com/en/features',
+        'x-default': 'https://markettai.com/es/features',
+      },
+    },
+  };
+}
+
+export default async function FeaturesPage(props: {
+  params: Promise<{ lang: string }>;
+}) {
+  const params = await props.params;
+  const locale = params.lang;
+  setRequestLocale(locale);
+  
+  const t = await getTranslations({ locale, namespace: 'features' });
+  const tHome = await getTranslations({ locale, namespace: 'home' });
+
+  return (
+    <div className="flex-1 bg-transparent text-body">
+      {/* Block 1: Hero Section */}
+      <div className="text-theme-primary py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-hero">
+          <h1 className="text-4xl font-bold text-center mb-4 animate-fade-in">{t('hero.title')}</h1>
+          <p className="text-theme-secondary text-xl text-center max-w-3xl mx-auto animate-fade-in-delay text-hero-subtitle">
+            {t('hero.subtitle')}
+          </p>
+        </div>
+      </div>
+
+      {/* Block 2: Pain Point Section */}
+      <div className="card-modern max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h2 className="text-3xl font-semibold text-theme-primary mb-4">{t('pain.title')}</h2>
+        <p className="text-lg text-theme-secondary max-w-4xl mx-auto">{t('pain.content')}</p>
+      </div>
+
+      {/* Block 3: Unique Mechanism (BOOST System) */}
+      <div className="bg-theme-secondary-bg py-20">
+        <div className="card-modern max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-theme-primary mb-4">{t('boost.title')}</h2>
+          <p className="text-xl text-theme-secondary mb-12">{t('boost.subtitle')}</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={"https://markettai-public.b-cdn.net/web/Features-1.png"}
+            alt={t('boost.title')}
+            className="image-modern mb-12 mx-auto shadow-theme-lg max-w-2xl w-full h-32 md:h-72 object-cover"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="card-modern p-6">
+              <h3 className="text-xl font-semibold text-theme-primary mb-2">{t('boost.item1.title')}</h3>
+              <p className="text-theme-secondary">{t('boost.item1.content')}</p>
+            </div>
+            <div className="card-modern p-6">
+              <h3 className="text-xl font-semibold text-theme-primary mb-2">{t('boost.item2.title')}</h3>
+              <p className="text-theme-secondary">{t('boost.item2.content')}</p>
+            </div>
+            <div className="card-modern p-6">
+              <h3 className="text-xl font-semibold text-theme-primary mb-2">{t('boost.item3.title')}</h3>
+              <p className="text-theme-secondary">{t('boost.item3.content')}</p>
+            </div>
+            <div className="card-modern p-6">
+              <h3 className="text-xl font-semibold text-theme-primary mb-2">{t('boost.item4.title')}</h3>
+              <p className="text-theme-secondary">{t('boost.item4.content')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Block 4: Detailed Functional Features */}
+      <div className="card-modern max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* A. Marketing and Acquisition */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-theme-primary mb-12 text-center">{t('group_ad.title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_ad.card1.title')}</h3>
+              <p className="text-theme-secondary">{t('group_ad.card1.content')}</p>
+            </div>
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_ad.card2.title')}</h3>
+              <p className="text-theme-secondary">{t('group_ad.card2.content')}</p>
+            </div>
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_ad.card3.title')}</h3>
+              <p className="text-theme-secondary">{t('group_ad.card3.content')}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* B. Content and Communication */}
+        <div>
+          <h2 className="text-3xl font-bold text-theme-primary mb-12 text-center">{t('group_content.title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_content.card1.title')}</h3>
+              <p className="text-theme-secondary">{t('group_content.card1.content')}</p>
+            </div>
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_content.card2.title')}</h3>
+              <p className="text-theme-secondary">{t('group_content.card2.content')}</p>
+            </div>
+            <div className="card-modern rounded-lg shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">{t('group_content.card3.title')}</h3>
+              <p className="text-theme-secondary">{t('group_content.card3.content')}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Block 5: Value Closing / CTA */}
+      <div className="bg-theme-secondary-bg py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-theme-primary mb-4">{t('cta_value.title')}</h2>
+          <p className="text-lg text-theme-secondary max-w-3xl mx-auto mb-8">{t('cta_value.content')}</p>
+          
+          {/* New Contrast Card Layout (Replacing old span grid) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
+            
+            {/* Starter Card: Manual/Tool */}
+            <div className="card-modern text-center animate-slide-up-delay-1 h-full">
+              <h3 className="text-section-title text-theme-primary mb-2">
+                {tHome("pricing_teaser.starter.title")}
+              </h3>
+              <p className="text-body text-theme-primary mb-6">
+                {tHome("pricing_teaser.starter.price")}
+              </p>
+              <div className="p-4 gap-4 text-theme-primary text-lg">
+                {t("cta_value.starter")}
+              </div>
+            </div>
+
+            {/* Pro Card: Autonomous Agency (Highlighted) */}
+            <div className="bg-primary-700/40 p-12 text-center rounded-2xl border-2 border-accent-primary bg-accent-primary/5 animate-slide-up-delay-2 h-full relative">
+              <div className="absolute top-0 right-0 bg-white text-primary-700 text-md font-bold py-1 px-3 rounded-bl-xl rounded-tr-xl">
+                {tHome("pricing_teaser.pro.badge")}
+              </div>
+              <h3 className="text-section-title text-theme-primary mb-2">
+                {tHome("pricing_teaser.pro.title")}
+              </h3>
+              <p className="text-body text-theme-primary mb-6">
+                {tHome("pricing_teaser.pro.price")}
+              </p>
+              <div className="p-4 text-theme-primary text-lg">
+                {t('cta_value.pro')}
+              </div>
+            </div>
+          </div>
+          {/* End New Contrast Card Layout */}
+
+          {/* Updated CTA Button */}
+          <Link 
+            href="/pricing"
+            className="btn-primary bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            {t('cta_value.button')}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+

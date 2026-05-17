@@ -1,0 +1,303 @@
+pruebas con las cartas
+version final que no me gustó:
+'use client';
+
+import { TrendingDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import CtaBanner from '../CtaBanner';
+
+interface EconomicJustificationProps {
+  locale: string;
+}
+
+export const EconomicJustification = ({ locale }: EconomicJustificationProps) => {
+  const t = useTranslations('pricing');
+  const economicOptions = [
+    { 
+      key: 'agency', 
+      // Usamos las clases nativas de tu CSS para las opciones tradicionales
+      color: 'bg-theme-secondary card-modern-2', 
+      borderColor: 'border-theme-secondary hover:border-white/20' 
+    },
+    { 
+      key: 'employee', 
+      color: 'bg-theme-secondary card-modern-2', 
+      borderColor: 'border-theme-secondary hover:border-white/20' 
+    },
+    { 
+      key: 'markettai', 
+      // Para la opción Pro usamos un fondo ligeramente más claro (tertiary) y bordes de acento
+      color: 'bg-theme-tertiary glass-effect card-modern-2', 
+      borderColor: '--gradient-accent hover:var(--shadow-xl), var(--shadow-glow)', 
+      highlight: true 
+    }
+  ];
+
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mb-12">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-bold text-theme-primary mb-4">{t('economic.title')}</h2>
+        <p className="text-theme-secondary text-lg">{t('economic.subtitle')}</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {economicOptions.map((option) => (
+          <div
+            key={option.key}
+            className={`${option.color} border ${option.borderColor} rounded-xl p-8 relative ${
+              option.highlight 
+                ? 'ring-2 -bg-tertiary scale-105 shadow-glow' 
+                : 'shadow-theme-md'
+            }`}
+          >
+            {option.highlight && (
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-cyan-600 to-blue-600 border border-white/20 rounded-bl-xl rounded-tr-xl text-white px-4 py-1 text-xs font-bold uppercase tracking-wider">
+                {t('economic.best_value_badge')}
+              </div>
+            )}
+            <h3 className="text-2xl font-bold text-theme-primary mb-4">
+              {t(`economic.${option.key}.title`)}
+            </h3>
+            <p className="text-3xl font-bold text-theme-primary mb-6">
+              {t(`economic.${option.key}.price`)}
+            </p>
+
+            <div className="text-theme-secondary text-sm mb-6">
+              <p className="font-semibold text-theme-primary mb-2">
+                {t(`economic.${option.key}.includes_title`)}
+              </p>
+              <p className="leading-relaxed">
+                {t(`economic.${option.key}.content`)}
+              </p>
+            </div>
+
+            {option.highlight && (
+              <div className="flex items-center text-blue-600 font-semibold text-sm mt-auto">
+                <TrendingDown className="w-4 h-4 mr-2" />
+                {t('economic.markettai.saving_badge')}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Caja inferior de Beneficios (Planes Pro+) adaptada */}
+      <div className="mt-16 bg-theme-secondary card-modern-2 p-8 border border-theme-primary">
+        <h3 className="text-lg font-bold text-theme-primary mb-4">{t('economic.wins.title')}</h3>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-theme-primary">
+          <li className="flex items-start">
+            <span className="text-cyan-400 font-bold mr-3">✓</span>
+            <span>{t('economic.wins.item1')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-cyan-400 font-bold mr-3">✓</span>
+            <span>{t('economic.wins.item2')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-cyan-400 font-bold mr-3">✓</span>
+            <span>{t('economic.wins.item3')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-cyan-400 font-bold mr-3">✓</span>
+            <span>{t('economic.wins.item4')}</span>
+          </li>
+        </ul>
+      </div>
+
+      <CtaBanner
+        title={t('economic.roi_cta.title')}
+        buttonText={t('economic.roi_cta.button')}
+        linkTo={`/${locale}/calculator`}
+      />
+    </section>
+  );
+};
+
+
+
+===========================================================================
+'use client';
+
+
+
+import { TrendingDown } from 'lucide-react';
+
+import { useTranslations } from 'next-intl';
+
+import CtaBanner from '../CtaBanner';
+
+
+
+interface EconomicJustificationProps {
+
+  locale: string;
+
+}
+
+
+
+export const EconomicJustification = ({ locale }: EconomicJustificationProps) => {
+
+  const t = useTranslations('pricing');
+
+  const economicOptions = [
+
+    { key: 'agency', color: 'bg-red-500/40', borderColor: 'border-red-200' },
+
+    { key: 'employee', color: 'bg-orange-500/40', borderColor: 'border-orange-200' },
+
+    { key: 'markettai', color: 'bg-green-500/40', borderColor: 'border-green-200', highlight: true }
+
+  ];
+
+
+
+  return (
+
+    <section className="card-modern max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mb-12">
+
+      <div className="text-center mb-16">
+
+        <h2 className="text-3xl font-bold text-theme-primary mb-4">{t('economic.title')}</h2>
+
+        <p className="text-theme-secondary text-lg">{t('economic.subtitle')}</p>
+
+      </div>
+
+
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {economicOptions.map((option) => (
+
+          <div
+
+            key={option.key}
+
+            className={`${option.color} border-2 ${option.borderColor} rounded-xl p-8 relative ${
+
+              option.highlight ? 'ring-2 ring-primary-700 scale-105' : ''
+
+            } transition-transform`}
+
+          >
+
+            {option.highlight && (
+
+              <div className="absolute top-0 right-0 bg-primary-500/70 border-primary-700 rounded-bl-xl rounded-tr-xl text-white px-4 py-1 md:py-2 text-sm font-bold">
+
+                {t('economic.best_value_badge')}
+
+              </div>
+
+            )}
+
+            <h3 className="text-2xl font-bold text-theme-primary mb-4">
+
+              {t(`economic.${option.key}.title`)}
+
+            </h3>
+
+            <p className="text-3xl font-bold text-theme-primary mb-6">
+
+              {t(`economic.${option.key}.price`)}
+
+            </p>
+
+
+
+            <div className="text-theme-secondary text-sm mb-6">
+
+              <p className="font-semibold text-theme-primary mb-2">
+
+                {t(`economic.${option.key}.includes_title`)}
+
+              </p>
+
+              <p>
+
+                {t(`economic.${option.key}.content`)}
+
+              </p>
+
+            </div>
+
+
+
+            {option.highlight && (
+
+              <div className="flex items-center text-white font-semibold text-sm">
+
+                <TrendingDown className="w-4 h-4 mr-2" />
+
+                {t('economic.markettai.saving_badge')}
+
+              </div>
+
+            )}
+
+          </div>
+
+        ))}
+
+      </div>
+
+
+
+      <div className="mt-16 bg-gray-500/60 rounded-xl p-8 border border-gray-200">
+
+        <h3 className="text-lg font-bold text-theme-primary mb-4">{t('economic.wins.title')}</h3>
+
+        <ul className="space-y-3 text-theme-primary">
+
+          <li className="flex items-start">
+
+            <span className="text-green-400 font-bold mr-3">✓</span>
+
+            <span>{t('economic.wins.item1')}</span>
+
+          </li>
+
+          <li className="flex items-start">
+
+            <span className="text-green-400 font-bold mr-3">✓</span>
+
+            <span>{t('economic.wins.item2')}</span>
+
+          </li>
+
+          <li className="flex items-start">
+
+            <span className="text-green-400 font-bold mr-3">✓</span>
+
+            <span>{t('economic.wins.item3')}</span>
+
+          </li>
+
+          <li className="flex items-start">
+
+            <span className="text-green-400 font-bold mr-3">✓</span>
+
+            <span>{t('economic.wins.item4')}</span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+      <CtaBanner
+
+        title={t('economic.roi_cta.title')}
+
+        buttonText={t('economic.roi_cta.button')}
+
+        linkTo={`/${locale}/calculator`}
+
+      />
+
+    </section>
+
+  );
+
+};
