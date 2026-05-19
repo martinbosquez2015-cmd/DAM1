@@ -8,8 +8,10 @@
 |Màscara fija|1.5|
 |Màscara variable|1.5|
 |Enrutamiento|2|
-
-
+------
+## Estudio
+1. Crear un script en windows en el que usemos los cmdlets y los pipes
+----
 ## Tablas 
 - naves
 
