@@ -1,0 +1,8 @@
+obtener la lista de usuarios locales del sistema mediante tuberìas, mostrar solo:
+    - Nombre del usuario
+    - Si está habilitado
+    - Último inicio de sesión
+    - Ordenar el resultado por nombre de usuario
+
+
+

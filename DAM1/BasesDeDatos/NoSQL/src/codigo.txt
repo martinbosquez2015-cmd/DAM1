@@ -1,0 +1,72 @@
+// Seleccionar o crear la base de datos de EcoDrive
+use ecodrive_db;
+
+// Insertar 3 vehículos aprovechando la flexibilidad del esquema (esquema dinámico)
+db.vehiculos.insertMany([
+  {
+    _id: "VEH-PAT-001",
+    tipo: "patinete",
+    marca: "Xiaomi",
+    modelo: "Electric Scooter 4 Pro",
+    estado: "disponible",
+    // Atributo específico de patinete
+    limite_peso_kg: 120, 
+    // Historial de mantenimiento embebido como un array de objetos (Agregado)
+    historial_mantenimiento: [
+      {
+        fecha: ISODate("2026-03-10T08:30:00Z"),
+        tipo_reparacion: "Ajuste de frenos",
+        mecanico: "Carlos Gómez",
+        piezas_reemplazadas: ["Pastilla de freno trasera"],
+        costo: 25.50
+      },
+      {
+        fecha: ISODate("2026-05-01T14:20:00Z"),
+        tipo_reparacion: "Cambio de neumático",
+        mecanico: "Ana Martínez",
+        piezas_reemplazadas: ["Cámara de aire 10''"],
+        costo: 15.00
+      }
+    ]
+  },
+  {
+    _id: "VEH-BIC-042",
+    tipo: "bicicleta",
+    marca: "Orbea",
+    modelo: "Diem 20",
+    estado: "en_mantenimiento",
+    // Atributos específicos de bicicleta
+    cantidad_marchas: 9,
+    tiene_cesta: true,
+    historial_mantenimiento: [
+      {
+        fecha: ISODate("2026-04-15T10:00:00Z"),
+        tipo_reparacion: "Engrase de cadena y ajuste de cambios",
+        mecanico: "Carlos Gómez",
+        piezas_reemplazadas: [], // Estructura flexible: sin piezas aquí
+        costo: 10.00
+      }
+    ]
+  },
+  {
+    _id: "VEH-COCON-105",
+    tipo: "coche",
+    marca: "Tesla",
+    modelo: "Model 3",
+    estado: "disponible",
+    // Atributos específicos de coche
+    tipo_combustible: "Eléctrico",
+    capacidad_pasajeros: 5,
+    autonomia_km: 491,
+    historial_mantenimiento: [
+      {
+        fecha: ISODate("2026-02-20T09:00:00Z"),
+        tipo_reparacion: "Revisión general de software y sensores",
+        mecanico: "Laura Peña",
+        detalles_tecnicos: { version_firmware: "v12.3.4", calibracion: "OK" }, // Campos completamente dinámicos
+        piezas_reemplazadas: [],
+        costo: 0.00
+      }
+    ]
+  }
+]);

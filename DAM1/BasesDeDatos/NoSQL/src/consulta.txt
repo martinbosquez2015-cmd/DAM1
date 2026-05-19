@@ -1,0 +1,5 @@
+// Buscar únicamente los vehículos que poseen el atributo 'tipo_combustible'
+db.vehiculos.find(
+  { tipo_combustible: { $exists: true } },
+  { marca: 1, modelo: 1, tipo_combustible: 1, estado: 1 } // Proyección para ver solo lo importante
+);
