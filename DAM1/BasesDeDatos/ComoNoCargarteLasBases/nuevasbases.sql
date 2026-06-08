@@ -1,3 +1,12 @@
+
+/*
+ATENCION WE
+COSAS QUE PODRÌAN CAER EN ESTA TONTERIA
+	- COSAS CON FECHAS Y OPERACIONES
+    - ELIMINAR DUPLICADOS
+    - HACER NUEVAS TABLAS
+    - FOREIGN KEYS
+*/
 -- Apuntes y trabajo sobre la base de datos de logìstica global alv
 use logistica_global;
 -- vamos a sanear toda esta pinche tabla alv
@@ -108,9 +117,35 @@ use logistica_global;
             ELSE TRIM(ciudad_ubicacion)
 		END;
         COMMIT;
+        SET SQL_SAFE_UPDATES = 1;
         ALTER TABLE almacenes
 			MODIFY ciudad_ubicacion VARCHAR(15) NOT NULL;
+            
 		-- YA está, ahora vamos a por capacidad_m3
+        select * from almacenes;
+        SET SQL_SAFE_UPDATES = 0 ;
+        START TRANSACTION;
+			UPDATE almacenes SET capacidad_m3 = TRIM(REPLACE(REPLACE(capacidad_m3, 'metros cúbicos', ''),'m3', '')); -- lito poio
+		COMMIT;
+        SET SQL_SAFE_UPDATES = 0;
+        
+        -- ahora vamos con los prefijos de los telefonos
+        select * from almacenes; -- creo que hya un problema la longitud de ciertos telèfonos, tipo, si quisiera noramalizar esto y añadir un check me va a dar problemas
+        SET SQL_SAFE_UPDATES = 0;
+        START TRANSACTION;
+			UPDATE almacenes SET tel_contacto = TRIM(REPLACE(tel_contacto, '+34',''));-- rollback
+            SELECT *, length(tel_contacto) as si from almacenes having si<9;
+            -- si consideramos solucionar esto pues unad e las opciones esponere esto a null, pero acabo de recordar que con 
+            -- las ciudades lo que hice fue poner 'DESCONOCIDO' a los valores null, y lo màs recomendable es poner null esos numeros de 
+            -- telèfono y no 'DESCONOCIDO, así que por mientras estoy con el culo a dos manos, nah bromi
+            UPDATE almacenes SET tel_contacto = 'DESCONOCIDO' WHERE length(tel_contacto)<9; -- no es muy optimo poner la funcion luego del where y antes del operador de comparacion, pero meh
+		ROLLBACK; -- hice un rolllbak porque no se si mantener lo de los refijos o no al final| pero tambien de paso soluciono esto de una forma
+        -- FROMA 2
+        START TRANSACTION;
+        SELECT *, length(tel_contacto) as si from almacenes;
+        UPDATE almacenes SET tel_contacto = NULL WHERE NOT length(tel_contacto)=13; -- ya està
+            
+		
         
         
         
