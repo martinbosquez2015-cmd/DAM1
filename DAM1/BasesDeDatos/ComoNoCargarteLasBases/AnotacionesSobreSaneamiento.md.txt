@@ -1,0 +1,16 @@
+# Cosillas sobre saneamiento
+
+## P1
+### problemas dentro de la base
+#### tabla Medicos:
+	- Número de colegiado inconsistente
+	- Número de id_especialidad en id 5 no existente(99)
+#### Tabla Pacientes:
+	- nif tiene formato inconsistente, espacios dentro de algunos
+	- nombres repetidos y cosas mal hechas 
+	- algunos emails no terminan en .com, hay uno que tiene dos @
+	- telefonos de contacto con formato inconsistente 
+	- Poliza rara...
+#### TAbla raw_import_visitas:
+	- no tengo ni perra idea de para que está la tabla
+####
