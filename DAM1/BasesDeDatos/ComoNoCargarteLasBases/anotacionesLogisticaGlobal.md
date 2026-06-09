@@ -18,4 +18,19 @@
 - __tipo_gestion:__ las ultimas y el formato no es igual en la opciones
 - __Ubicacion_geogràfica:__ atributos multivaluados
 
+## Tabla clientes:
+- __fecha_alta_cliente:__ mal formato, mucha ambigüedad
+- __limite_credito_sucio:__ hay diferentes tipos de monedas we
+- no encuentro más problemas ene sta tabla, hay otros datos en los que toda la columna está a null, pero suponggo que simplemente no hayq ue sanear mucho en esta tabla
+
+## tabla empleados:
+- __nif_nie:__ Formato muy variado, hay espacios y valores null
+- __f_alta:__ fromato diferente y ambigüedad
+- __salario_base_sucio:__ es un varchar, se puede complicar al momento de hacer operaciones con esto
+- __almacen_id:__ hay a veces ids de almacenes con 999 y no hay almacenes con un id asi.
+- __activo_boolean:__ formato diferenciado
+
+
+
+
 
