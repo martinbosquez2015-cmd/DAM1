@@ -4,10 +4,15 @@
 - Sin integridad referencial, nunguno apunta a otro 
 ## A donde apunta cada cosa
 >vehiculos-->mantenimientos_flota
+
 >envios-->incidencias
+
 >clientes-->envios
+
 >vehiculos-->envios
+
 >empleados-->envios
+
 >almacen-->envios
 ## Tabbla almacenes
 - __cod_almacen:__ hay espacios y guines bajos en ciertos registros, ademàs los ùltimos 7 registros estàn hecho mierda, posibilidad de codigos repetidos 
