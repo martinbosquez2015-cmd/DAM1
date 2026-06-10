@@ -306,6 +306,8 @@ ahora vamos a la condenada tabla envios!!!:------------------------------
     ALTER TABLE envios
 		ADD CONSTRAINT fk_envios_clientes FOREIGN KEY(cliente_id)
 			REFERENCES clientes(id);
+            -- que paz cabron, a ver si mañana nos ponemos a hacer examenes, tambien le vamos a meter los apuntes del ra4 por si las flys para no cagarla xd
+            
     
 
 
